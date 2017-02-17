@@ -1,0 +1,125 @@
+.clearFix { clear:both; }
+
+
+/*
+ * BUTTONS
+*/
+.pro_ads_banner_creator .button-primary:hover {
+    background: none repeat scroll 0% 0% #1E8CBE;
+    border-color: #0074A2;
+    box-shadow: 0px 1px 0px rgba(120, 200, 230, 0.6) inset;
+    color: #FFF;
+}
+.pro_ads_banner_creator .button-primary {
+    background: none repeat scroll 0% 0% #2EA2CC;
+    border-color: #0074A2;
+    box-shadow: 0px 1px 0px rgba(120, 200, 230, 0.5) inset, 0px 1px 0px rgba(0, 0, 0, 0.15);
+    color: #FFF;
+    text-decoration: none;
+}
+
+.pro_ads_banner_creator .button-secondary:hover {
+    background: none repeat scroll 0% 0% #FAFAFA;
+    border-color: #999;
+    color: #222;
+}
+.pro_ads_banner_creator .button-secondary {
+    color: #555;
+    border-color: #CCC;
+    background: none repeat scroll 0% 0% #F7F7F7;
+    box-shadow: 0px 1px 0px #FFF inset, 0px 1px 0px rgba(0, 0, 0, 0.08);
+    vertical-align: top;
+}
+
+.pro_ads_banner_creator .button-primary, .pro_ads_banner_creator .button-secondary, .pro_ads_banner_creator .button {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 26px;
+    height: 28px;
+    margin: 0px;
+    padding: 0px 10px 1px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.pro_ads_banner_creator hr {
+    border-right: 0px none;
+    border-left: 0px none;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-width: 1px 0px;
+    border-style: solid none;
+	border: 0;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #fafafa;
+	border-color: #DDD -moz-use-text-color #FAFAFA;
+}
+
+
+
+
+
+
+/*----------------------------
+    The file upload form
+-----------------------------*/
+#visualbannercreator-ul-list,
+    #visualbannercreator-ul-list li {
+        margin: 2px;
+        padding: 2px;
+		list-style:none;
+    }
+
+    #visualbannercreator-ul-list li {
+        display: inline-block;
+    }
+		#visualbannercreator-ul-list li img {
+			border-radius:0;
+			box-shadow:none;
+			max-width:100%;
+			height:auto;
+		}
+
+    .action-delete {
+        background: none repeat scroll 0 0 #F2F2F2;
+        border: 1px solid #CCCCCC;
+        border-radius: 5px 5px 5px 5px;
+        color: #333333;
+        font-size: 12px;
+        font-weight: bold;
+        margin: 0;
+        padding: 3px 8px;
+        text-decoration: none;
+    }
+
+    .visualbannercreator_button {
+        height: 28px;
+		line-height: 28px;
+		font-size: 13px;
+		color: #555;
+		background: none repeat scroll 0% 0% #F7F7F7;
+		border: solid 1px #CCC;
+		border-bottom: 2px solid #222222;
+		margin-right: 10px;
+		position: relative;
+		font-weight: 300;
+		text-decoration: none;
+		padding: 0px 16px;
+		display: inline-block;
+		box-shadow: 0px 1px 0px #FFF inset, 0px 1px 0px rgba(0, 0, 0, 0.08);
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		cursor: pointer;
+    }
+	.visualbannercreator_button:hover {
+		border-bottom: solid 2px #666;
+		text-decoration:none;
+	}

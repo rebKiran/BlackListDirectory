@@ -1,0 +1,552 @@
+[27-Dec-2016 13:49:11 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 46 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[27-Dec-2016 13:50:00 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 46 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[27-Dec-2016 13:53:40 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 46 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[27-Dec-2016 13:59:58 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 46 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[27-Dec-2016 14:03:52 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 46 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[27-Dec-2016 14:21:26 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 46 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[27-Dec-2016 14:28:26 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 46 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[27-Dec-2016 15:09:17 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 46 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[27-Dec-2016 15:10:48 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 46 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[28-Dec-2016 11:09:14 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 29 bytes) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/live-composer-page-builder/modules/html/module.php on line 1014
+[28-Dec-2016 11:38:55 UTC] PHP Warning:  Missing argument 1 for DPWP_add_row_actions(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-duplicate-posts-pages-cpt/duplicate-post-page.php on line 18 and defined in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-duplicate-posts-pages-cpt/includes/dp_manage.php on line 3
+[28-Dec-2016 12:01:05 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 300307 bytes) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/fields/typography/googlefonts.php on line 1
+[28-Dec-2016 12:55:55 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 300307 bytes) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/fields/typography/googlefonts.php on line 1
+[28-Dec-2016 13:45:03 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 300307 bytes) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/fields/typography/googlefonts.php on line 1
+[30-Dec-2016 17:09:54 UTC] PHP Fatal error:  Cannot redeclare bbloomer_redirectcustom() (previously declared in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php:3516) in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3610
+[30-Dec-2016 17:09:56 UTC] PHP Fatal error:  Cannot redeclare bbloomer_redirectcustom() (previously declared in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php:3516) in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3610
+[30-Dec-2016 17:09:59 UTC] PHP Fatal error:  Cannot redeclare bbloomer_redirectcustom() (previously declared in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php:3516) in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3610
+[30-Dec-2016 17:10:20 UTC] PHP Fatal error:  Cannot redeclare bbloomer_redirectcustom() (previously declared in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php:3516) in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3610
+[30-Dec-2016 17:10:36 UTC] PHP Fatal error:  Cannot redeclare bbloomer_redirectcustom() (previously declared in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php:3516) in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3610
+[30-Dec-2016 17:10:40 UTC] PHP Fatal error:  Cannot redeclare bbloomer_redirectcustom() (previously declared in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php:3516) in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3610
+[30-Dec-2016 17:10:55 UTC] PHP Fatal error:  Cannot redeclare bbloomer_redirectcustom() (previously declared in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php:3516) in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3610
+[30-Dec-2016 17:10:56 UTC] PHP Fatal error:  Cannot redeclare bbloomer_redirectcustom() (previously declared in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php:3516) in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3610
+[30-Dec-2016 17:11:11 UTC] PHP Fatal error:  Cannot redeclare bbloomer_redirectcustom() (previously declared in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php:3516) in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3610
+[30-Dec-2016 17:29:11 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 17:34:32 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 17:35:02 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 17:35:48 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 17:46:09 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 17:46:14 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 17:46:32 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 17:46:33 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 17:46:40 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 17:46:40 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 17:50:47 UTC] PHP Fatal error:  Class 'WP_Session' not found in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 227
+[30-Dec-2016 17:50:47 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[30-Dec-2016 17:51:33 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[30-Dec-2016 17:51:34 UTC] PHP Fatal error:  Class 'WP_Session' not found in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 227
+[30-Dec-2016 17:54:30 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 17:54:37 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[30-Dec-2016 17:54:37 UTC] PHP Fatal error:  Class 'WP_Session' not found in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 227
+[30-Dec-2016 17:57:55 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[30-Dec-2016 17:57:55 UTC] PHP Fatal error:  Class 'WP_Session' not found in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 227
+[30-Dec-2016 17:59:21 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 17:59:28 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[30-Dec-2016 18:12:07 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[30-Dec-2016 18:15:07 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 18:15:22 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 18:15:36 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 18:15:44 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 18:16:06 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[30-Dec-2016 19:07:07 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[30-Dec-2016 19:07:12 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[30-Dec-2016 19:10:43 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[30-Dec-2016 19:14:46 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[30-Dec-2016 19:17:12 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[30-Dec-2016 19:59:47 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[02-Jan-2017 06:53:07 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[02-Jan-2017 06:54:14 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[02-Jan-2017 07:00:55 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[02-Jan-2017 14:18:12 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[02-Jan-2017 14:20:20 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[02-Jan-2017 15:11:14 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[02-Jan-2017 15:21:43 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[02-Jan-2017 15:43:07 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[02-Jan-2017 15:43:09 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[02-Jan-2017 15:43:12 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[02-Jan-2017 16:11:56 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[02-Jan-2017 16:14:23 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_show_banner_price'), call_user_func_array, bc_show_banner_price_callback
+[05-Jan-2017 15:16:14 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 263
+[05-Jan-2017 15:16:24 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 263
+[05-Jan-2017 15:16:25 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 263
+[05-Jan-2017 15:48:07 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:48:09 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:49:47 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:49:47 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:53:31 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:53:33 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:53:43 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:53:43 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:53:48 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:53:50 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:53:57 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:53:58 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:57:14 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:57:15 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:58:07 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 15:58:07 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:02:32 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:02:33 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:02:43 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:02:44 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:37:26 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:37:27 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:39:30 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:39:30 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:40:09 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:40:09 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:41:54 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:41:56 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:44:04 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:44:05 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:46:24 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:46:25 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:48:47 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 16:48:47 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 17:22:45 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[05-Jan-2017 17:22:46 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT postmeta.meta_value AS price
+						FROM wp_postmeta AS postmeta
+					   JOIN wp_posts AS products ON ( products.ID = postmeta.post_id )
+						WHERE postmeta.meta_key = '_sale_price'
+						AND products.ID =  made by do_action('wp_ajax_bc_banner_price'), call_user_func_array, bc_banner_price_callback
+[06-Jan-2017 12:50:44 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[06-Jan-2017 13:07:30 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[06-Jan-2017 13:07:44 UTC] PHP Warning:  Missing argument 2 for wpdb::prepare(), called in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 49 and defined in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1246
+[10-Jan-2017 06:40:27 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:10) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[10-Jan-2017 06:40:27 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:10) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[02-Feb-2017 10:50:21 UTC] WordPress database error Column 'name' cannot be null for query INSERT INTO `wpcads_paypal` (`id`, `user_id`, `name`, `token`, `price`, `currency`, `ads`, `days`, `date`, `status`, `used`, `transaction_id`, `firstname`, `lastname`, `email`, `description`, `summary`, `created`) VALUES ('', '1', NULL, '', 0.000000, '', 0, 0, '02/02/2017 10:50:21', 'success', 0, '', '', '', '', '', '', '1486032621') made by require_once('wp-admin/user-edit.php'), do_action('personal_options_update'), call_user_func_array, save_extra_user_profile_fields
+[07-Feb-2017 09:48:21 UTC] PHP Warning:  Error while sending QUERY packet. PID=601773 in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1813
+[07-Feb-2017 09:48:21 UTC] PHP Warning:  Error while sending QUERY packet. PID=602329 in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1813
+[07-Feb-2017 09:50:10 UTC] PHP Warning:  Error while sending QUERY packet. PID=605041 in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1813
+[07-Feb-2017 09:50:10 UTC] PHP Warning:  Error while sending QUERY packet. PID=606093 in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1813
+[07-Feb-2017 09:50:10 UTC] PHP Warning:  Error while sending QUERY packet. PID=606094 in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1813
+[07-Feb-2017 09:50:30 UTC] PHP Warning:  Error while sending QUERY packet. PID=607357 in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1813
+[07-Feb-2017 09:56:08 UTC] PHP Warning:  Error while sending QUERY packet. PID=622547 in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1813
+[07-Feb-2017 10:21:27 UTC] PHP Warning:  Error while sending QUERY packet. PID=703338 in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1813
+[07-Feb-2017 10:21:27 UTC] PHP Warning:  Error while sending QUERY packet. PID=716945 in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1813
+[07-Feb-2017 10:21:27 UTC] PHP Warning:  Error while sending QUERY packet. PID=716921 in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1813
+[07-Feb-2017 10:23:37 UTC] PHP Warning:  Error while sending QUERY packet. PID=721473 in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1813
+[07-Feb-2017 10:23:37 UTC] PHP Warning:  Error while sending QUERY packet. PID=721497 in /home/rebelute/public_html/blacklistdir/wp-includes/wp-db.php on line 1813
+[07-Feb-2017 19:31:12 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:31:12 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:31:14 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/core/newsflash.php on line 78
+[07-Feb-2017 19:31:15 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-includes/pluggable.php on line 1167
+[07-Feb-2017 19:31:37 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:31:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:31:39 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/class.redux_functions.php on line 56
+[07-Feb-2017 19:31:39 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:31:46 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:31:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:31:48 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/class.redux_functions.php on line 56
+[07-Feb-2017 19:31:49 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:31:58 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:31:58 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:32:00 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/class.redux_functions.php on line 56
+[07-Feb-2017 19:32:01 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:32:20 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:32:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:32:22 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/class.redux_functions.php on line 56
+[07-Feb-2017 19:32:22 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:32:25 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:32:26 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/class.redux_functions.php on line 56
+[07-Feb-2017 19:32:27 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:33:15 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:33:17 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/class.redux_functions.php on line 56
+[07-Feb-2017 19:33:18 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:33:18 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-includes/pluggable.php on line 1167
+[07-Feb-2017 19:33:18 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-includes/pluggable.php on line 1167
+[07-Feb-2017 19:41:37 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:41:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:41:40 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/class.redux_functions.php on line 56
+[07-Feb-2017 19:41:40 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:41:43 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:41:43 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:41:45 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/class.redux_functions.php on line 56
+[07-Feb-2017 19:41:45 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:42:22 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:42:47 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:42:47 UTC] WordPress database error Duplicate key name 'location_type_code' for query ALTER TABLE wp_woocommerce_tax_rate_locations ADD KEY location_type_code (location_type(40),location_code(90)) made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('init'), call_user_func_array, WC_Install::check_version, WC_Install::install, WC_Install::create_tables, dbDelta
+[07-Feb-2017 19:42:47 UTC] WordPress database error Duplicate key name 'location_type_code' for query ALTER TABLE wp_woocommerce_shipping_zone_locations ADD KEY location_type_code (location_type(40),location_code(90)) made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('init'), call_user_func_array, WC_Install::check_version, WC_Install::install, WC_Install::create_tables, dbDelta
+[07-Feb-2017 19:42:54 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:43:37 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:43:38 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:43:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:43:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:43:38 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:43:38 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:43:38 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:43:39 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:43:39 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:43:46 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:44:06 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:44:06 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:44:06 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:44:19 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:44:19 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:44:19 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:44:35 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:44:36 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:44:36 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[07-Feb-2017 19:44:47 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:45:35 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:45:38 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:46:48 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:47:36 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:47:39 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:48:42 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:48:44 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:49:37 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:49:43 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:49:49 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:50:29 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:50:45 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[07-Feb-2017 19:50:45 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp-session-manager/class-wp-session.php on line 124
+[07-Feb-2017 19:50:45 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[08-Feb-2017 05:53:46 UTC] WordPress database error Duplicate key name 'location_type_code' for query ALTER TABLE wp_woocommerce_tax_rate_locations ADD KEY location_type_code (location_type(40),location_code(90)) made by activate_plugin, do_action('activate_woocommerce/woocommerce.php'), call_user_func_array, WC_Install::install, WC_Install::create_tables, dbDelta
+[08-Feb-2017 05:53:46 UTC] WordPress database error Duplicate key name 'location_type_code' for query ALTER TABLE wp_woocommerce_shipping_zone_locations ADD KEY location_type_code (location_type(40),location_code(90)) made by activate_plugin, do_action('activate_woocommerce/woocommerce.php'), call_user_func_array, WC_Install::install, WC_Install::create_tables, dbDelta
+[08-Feb-2017 07:49:01 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[08-Feb-2017 07:49:48 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[08-Feb-2017 07:49:50 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/class.redux_functions.php on line 56
+[08-Feb-2017 07:49:51 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[08-Feb-2017 07:50:25 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[08-Feb-2017 07:50:27 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php:289) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/redux-framework/ReduxCore/inc/class.redux_functions.php on line 56
+[08-Feb-2017 07:50:27 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[08-Feb-2017 07:50:28 UTC] PHP Notice:  Undefined index: enable_css in /home/rebelute/public_html/blacklistdir/wp-content/plugins/widgets-on-pages/widgets_on_pages.php on line 289
+[08-Feb-2017 07:50:32 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[08-Feb-2017 07:51:18 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[08-Feb-2017 07:51:30 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[08-Feb-2017 07:51:31 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-includes/functions.php:3703) in /home/rebelute/public_html/blacklistdir/wp-includes/pluggable.php on line 1167
+[08-Feb-2017 08:05:20 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[08-Feb-2017 08:18:24 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[08-Feb-2017 08:18:25 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[08-Feb-2017 09:36:17 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[08-Feb-2017 09:36:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-includes/functions.php:3703) in /home/rebelute/public_html/blacklistdir/wp-includes/pluggable.php on line 1167
+[08-Feb-2017 09:36:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-includes/functions.php:3703) in /home/rebelute/public_html/blacklistdir/wp-includes/pluggable.php on line 1167
+[08-Feb-2017 10:00:04 UTC] PHP Notice:  add_object_page is <strong>deprecated</strong> since version 4.5! Use add_menu_page() instead. in /home/rebelute/public_html/blacklistdir/wp-includes/functions.php on line 3703
+[08-Feb-2017 10:00:04 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-includes/functions.php:3703) in /home/rebelute/public_html/blacklistdir/wp-includes/pluggable.php on line 1167
+[08-Feb-2017 14:14:28 UTC] PHP Parse error:  syntax error, unexpected 'px' (T_STRING) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php on line 60
+[08-Feb-2017 14:14:35 UTC] PHP Parse error:  syntax error, unexpected 'px' (T_STRING) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php on line 60
+[08-Feb-2017 14:14:49 UTC] PHP Parse error:  syntax error, unexpected 'px' (T_STRING) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php on line 60
+[09-Feb-2017 14:51:18 UTC] PHP Parse error:  syntax error, unexpected '$canvasWd' (T_VARIABLE) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php on line 59
+[13-Feb-2017 08:21:25 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php on line 661
+[13-Feb-2017 08:22:11 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php on line 661
+[13-Feb-2017 08:23:25 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php on line 661
+[14-Feb-2017 06:51:44 UTC] PHP Parse error:  syntax error, unexpected '@' in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3884
+[14-Feb-2017 06:51:50 UTC] PHP Parse error:  syntax error, unexpected '@' in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3884
+[14-Feb-2017 06:51:53 UTC] PHP Parse error:  syntax error, unexpected '@' in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3884
+[14-Feb-2017 06:51:56 UTC] PHP Parse error:  syntax error, unexpected '@' in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3884
+[14-Feb-2017 06:52:01 UTC] PHP Parse error:  syntax error, unexpected '@' in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3884
+[14-Feb-2017 06:52:03 UTC] PHP Parse error:  syntax error, unexpected '@' in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3884
+[14-Feb-2017 06:52:06 UTC] PHP Parse error:  syntax error, unexpected '@' in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3884
+[14-Feb-2017 06:52:13 UTC] PHP Parse error:  syntax error, unexpected '@' in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3884
+[14-Feb-2017 06:52:24 UTC] PHP Parse error:  syntax error, unexpected '@' in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3884
+[14-Feb-2017 06:52:50 UTC] PHP Parse error:  syntax error, unexpected '@' in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3884
+[14-Feb-2017 06:54:50 UTC] PHP Parse error:  syntax error, unexpected '@' in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3884
+[14-Feb-2017 12:18:33 UTC] PHP Parse error:  syntax error, unexpected 'wp_mail' (T_STRING) in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/functions.php on line 3892
+[15-Feb-2017 10:12:48 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 114
+[15-Feb-2017 10:12:48 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 115
+[15-Feb-2017 10:12:48 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 116
+[15-Feb-2017 10:58:25 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 114
+[15-Feb-2017 10:58:25 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 115
+[15-Feb-2017 10:58:25 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 116
+[15-Feb-2017 13:10:12 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 114
+[15-Feb-2017 13:10:12 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 115
+[15-Feb-2017 13:10:12 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 116
+[15-Feb-2017 13:20:25 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 2
+[15-Feb-2017 13:20:25 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 3
+[15-Feb-2017 13:20:25 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 4
+[15-Feb-2017 13:20:25 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 5
+[15-Feb-2017 13:20:27 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 2
+[15-Feb-2017 13:20:27 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 3
+[15-Feb-2017 13:20:27 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 4
+[15-Feb-2017 13:20:27 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 5
+[15-Feb-2017 13:20:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 2
+[15-Feb-2017 13:20:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 3
+[15-Feb-2017 13:20:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 4
+[15-Feb-2017 13:20:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 5
+[15-Feb-2017 13:20:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 2
+[15-Feb-2017 13:20:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 3
+[15-Feb-2017 13:20:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 4
+[15-Feb-2017 13:20:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 5
+[15-Feb-2017 13:20:44 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 2
+[15-Feb-2017 13:20:44 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 3
+[15-Feb-2017 13:20:44 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 4
+[15-Feb-2017 13:20:44 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 5
+[15-Feb-2017 13:21:01 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 2
+[15-Feb-2017 13:21:01 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 3
+[15-Feb-2017 13:21:01 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 4
+[15-Feb-2017 13:21:01 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 5
+[15-Feb-2017 13:21:08 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 2
+[15-Feb-2017 13:21:08 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 3
+[15-Feb-2017 13:21:08 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 4
+[15-Feb-2017 13:21:08 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Shortcodes.php on line 5
+[15-Feb-2017 13:21:09 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/classes/Bc_Templates.php:3) in /home/rebelute/public_html/blacklistdir/wp-includes/pluggable.php on line 1167
+[16-Feb-2017 12:35:18 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 114
+[16-Feb-2017 12:35:18 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 115
+[16-Feb-2017 12:35:18 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 116
+[16-Feb-2017 12:51:13 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 114
+[16-Feb-2017 12:51:13 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 115
+[16-Feb-2017 12:51:13 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 116
+[16-Feb-2017 13:15:54 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 114
+[16-Feb-2017 13:15:54 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 115
+[16-Feb-2017 13:15:54 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 116
+[16-Feb-2017 22:56:39 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 114
+[16-Feb-2017 22:56:40 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 115
+[16-Feb-2017 22:56:40 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 116
+[17-Feb-2017 06:31:47 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 114
+[17-Feb-2017 06:31:47 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 115
+[17-Feb-2017 06:31:47 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 116
+[17-Feb-2017 06:33:40 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 114
+[17-Feb-2017 06:33:40 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 115
+[17-Feb-2017 06:33:40 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 116
+[17-Feb-2017 06:48:40 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'pritam@gmail.com'' at line 2 for query SELECT reviewer_email
+			FROM wp_richreviews Where = 'pritam@gmail.com' made by do_action('wp_ajax_add_review'), call_user_func_array, add_review
+[17-Feb-2017 06:49:27 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'pritam@gmail.com'' at line 2 for query SELECT reviewer_email
+			FROM wp_richreviews Where = 'pritam@gmail.com' made by do_action('wp_ajax_add_review'), call_user_func_array, add_review
+[17-Feb-2017 06:57:59 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 114
+[17-Feb-2017 06:57:59 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 115
+[17-Feb-2017 06:57:59 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/rebelute/public_html/blacklistdir/wp-content/plugins/wp_pro_visual_banner_creator/includes/ajax_functions.php on line 116

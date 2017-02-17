@@ -1,0 +1,72 @@
+.combobox {
+    margin-right: 0.1em;
+}
+.combobox_arrow{
+  
+
+    background: transparent url("../images/down-arrow.png") no-repeat center center;
+    display: block;
+    height: 100%;
+    width: 100%;
+
+}
+.combobox_button {
+
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius   : 0 4px 4px 0;
+  border-radius        : 0 4px 4px 0;
+  -moz-background-clip   : padding;
+  -webkit-background-clip: padding-box;
+  background-clip        : padding-box;
+  background: #ccc;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ccc), color-stop(0.6, #eee));
+  background-image: -webkit-linear-gradient(center bottom, #ccc 0%, #eee 60%);
+  background-image: -moz-linear-gradient(center bottom, #ccc 0%, #eee 60%);
+  background-image: -o-linear-gradient(bottom, #ccc 0%, #eee 60%);
+  background-image: -ms-linear-gradient(top, #cccccc 0%,#eeeeee 60%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#eeeeee',GradientType=0 );
+  background-image: linear-gradient(top, #cccccc 0%,#eeeeee 60%);
+  position: absolute;
+  left:auto !important;
+  right: -27px !important;
+  top: 0;
+  display: block;
+  height: 100% !important;
+  width: 30px !important;
+
+}
+
+.combobox_button:hover {
+    text-decoration: none;
+}
+
+.combobox_button {
+    * top: 1px !important;
+}
+
+.combobox_selector {
+    background-color: #EEE;
+    font-family: Helvetia, Arial, sans-serif;
+    font-size: 12px;
+    z-index: 1000;
+    max-height: 200px;
+	width:100% !important;
+    /*overflow: auto;*/
+}
+
+.combobox_selector ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border:1px solid #CCC;
+}
+
+.combobox_selector li {
+    padding: 2px 5px;
+}
+
+.combobox_selector li:hover,
+.combobox_selector li.selected {
+    background-color: #0066CC;
+    color: #FFF;
+}

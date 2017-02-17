@@ -1,0 +1,916 @@
+<?php
+/*WC()->cart->empty_cart( true );*/
+
+/**
+ * Template Name: Add Business
+ *
+ * @package WordPress
+ * @subpackage Twenty_Fourteen
+ * @since Twenty Fourteen 1.0
+ */
+/*if ( !is_user_logged_in() ) {
+	wp_redirect( home_url() ); exit;
+}elseif(!(isset($_GET['post']))) {
+	wp_redirect( home_url() ); exit;
+	}else{ 
+}*/
+
+get_header(); ?>
+
+<?php 	
+wp_session_unset();
+$wp_session = WP_Session::get_instance();
+$unique_id  = md5(uniqid(rand(), true));
+$wp_session['number'] = $unique_id; 
+
+
+
+$url ="http://blacklistdir.rebelute.in/packages/";
+
+global $wpdb;
+
+				
+if(isset($_POST['submitted'])) {
+		
+	if(trim($_POST['firstname']) === '') {
+		$firstnameError = esc_html__( 'Please enter a Firstname.', 'classify' );
+		$hasError = true;
+	} else {
+		$firstname = trim($_POST['firstname']);
+	}
+
+	if(trim($_POST['lastname']) === '') {
+		$lastnameError = esc_html__( 'Please enter a Lastname.', 'classify' );
+		$hasError = true;
+	} else {
+		$lastname = trim($_POST['lastname']);
+	}
+	
+	if(trim($_POST['email_address']) === '') {
+		$email_addressError = esc_html__( 'Please enter a Email Address.', 'classify' );
+		$hasError = true;
+	} else {
+		$email_address = trim($_POST['email_address']);
+	}
+	if(trim($_POST['business_name']) === '') {
+		$firstnameError = esc_html__( 'Please enter a Firstname.', 'classify' );
+		$hasError = true;
+	} else {
+		$business_name = trim($_POST['business_name']);
+	}
+
+	if(trim($_POST['phone_number']) === '') {
+		$lastnameError = esc_html__( 'Please enter a Phone Number.', 'classify' );
+		$hasError = true;
+	} else {
+		$phone_number = trim($_POST['phone_number']);
+	}
+	
+
+	$web_address = trim($_POST['web_address']);
+	$business_purpose = $_POST['business_purpose'];
+	$category_name = $_POST['category_name'];
+	
+	$owner    = $_POST['owner'];
+	$business_role = $_POST['business_role'];
+	$phone    = $_POST['contact']; //numeric value use: %d
+	$state  	 = $_POST['state']; //string value use: %s
+	$city   = $_POST['city']; //string value use: %s
+	/*$mailing_address   = $_POST['mailing_address'];*/ //string value use: %s
+	$street_address   = $_POST['street_address']; //string value use: %s
+	$address   = $_POST['address']; //string value use: %s
+	$contact   = $_POST['contact']; //string value use: %s
+	//$category_name = $_POST['category_name'];
+	
+	/*$product   = $_POST['contact']; //string value use: %s
+	$banner_id   = $_POST['contact']; //string value use: %s
+	$data_uri   = $_POST['contact']; //string value use: %s
+	$price   = $_POST['contact']; //string value use: %s*/
+	
+	
+
+
+	global $wpdb;
+	
+	 $sql = "INSERT INTO `wp_questionnaire` 
+	   (`owner`, `business_role`, `firstname`, `lastname`, `mailing_address`, `street_address`, `address`, `city`, `state`, `zipcode`, `email`, `contact`, `product_id`, `banner_id`,  `price`,  `image`, `banner_url`,`business_name`, `web_address`, `category` , `business_phone_number`, `business_purpose`, `number` )
+	   values ('$owner','$business_role','$firstname','$lastname', '', '$street_address', '$address',
+			 '$city', '$state', '422105', '$email_address', '$contact', '$product','$banner_id', '$price','$data_uri','$banner_url', '$business_name', '$web_address', '$category_name' ,'$phone_number', '$business_purpose', '$unique_id')";
+
+	$wpdb->query($sql);
+
+        $lastInsertId = $wpdb->insert_id; 
+
+        if(isset($_POST['business_contact']) && !empty($_POST['business_contact'] ) ) {
+				
+				$businessContacts 	= $_POST['business_contact'];
+				$streetAddr			= $_POST['street_add'];
+				$bussinessAddr		= $_POST['bussiness_addr'];
+				$bussinessCity		= $_POST['business_city'];
+				$businessState		= $_POST['business_state'];
+				$businessZipcode	= $_POST['business_zipcode'];
+				
+				foreach( $businessContacts as $index => $businessContact ){
+					
+					$street = trim($streetAddr[$index]);
+					$business_addr = trim($bussinessAddr[$index]);
+					$bussn_city = trim($bussinessCity[$index]);
+					$bussn_state = trim($businessState[$index]);
+					$bussn_zip = trim($businessZipcode[$index]);
+					$bussn_contact = trim($businessContacts[$index]);
+					
+				 	$sql_business = "INSERT INTO `wp_business_addresses` (`questionnaire_id`, `street_address`, `address`, `city`, `state`, `contact`) VALUES ('$lastInsertId', '$business_addr', '$bussn_city', '$bussn_state', '$bussn_zip', '$bussn_contact')";
+					$wpdb->query($sql_business);
+				}
+			}
+
+	?>
+	<script type="text/javascript">
+               window.location='<?php echo $url;?>';
+     </script>
+<?php 
+} 
+
+$states['US'] = array('AL'=>"Alabama",  
+
+'AK'=>"Alaska",  
+
+'AZ'=>"Arizona",  
+
+'AR'=>"Arkansas",  
+
+'CA'=>"California",  
+
+'CO'=>"Colorado",  
+
+'CT'=>"Connecticut",  
+
+'DE'=>"Delaware",  
+
+'DC'=>"District Of Columbia",  
+
+'FL'=>"Florida",  
+
+'GA'=>"Georgia",  
+
+'HI'=>"Hawaii",  
+
+'ID'=>"Idaho",  
+
+'IL'=>"Illinois",  
+
+'IN'=>"Indiana",  
+
+'IA'=>"Iowa",  
+
+'KS'=>"Kansas",  
+
+'KY'=>"Kentucky",  
+
+'LA'=>"Louisiana",  
+
+'ME'=>"Maine",  
+
+'MD'=>"Maryland",  
+
+'MA'=>"Massachusetts",  
+
+'MI'=>"Michigan",  
+
+'MN'=>"Minnesota",  
+
+'MS'=>"Mississippi",  
+
+'MO'=>"Missouri",  
+
+'MT'=>"Montana",
+
+'NE'=>"Nebraska",
+
+'NV'=>"Nevada",
+
+'NH'=>"New Hampshire",
+
+'NJ'=>"New Jersey",
+
+'NM'=>"New Mexico",
+
+'NY'=>"New York",
+
+'NC'=>"North Carolina",
+
+'ND'=>"North Dakota",
+
+'OH'=>"Ohio",  
+
+'OK'=>"Oklahoma",  
+
+'OR'=>"Oregon",  
+
+'PA'=>"Pennsylvania",  
+
+'RI'=>"Rhode Island",  
+
+'SC'=>"South Carolina",  
+
+'SD'=>"South Dakota",
+
+'TN'=>"Tennessee",  
+
+'TX'=>"Texas",  
+
+'UT'=>"Utah",  
+
+'VT'=>"Vermont",  
+
+'VA'=>"Virginia",  
+
+'WA'=>"Washington",  
+
+'WV'=>"West Virginia",  
+
+'WI'=>"Wisconsin",  
+
+'WY'=>"Wyoming");
+
+?>	
+
+<section class="ads-main-page ">
+	<div class="container">
+		<div >
+		 <!-- Nav tabs -->
+		  <ul class="nav nav-tabs custom-tab" role="tablist">
+				<li role="presentation" class="active" id="about_you">
+				   <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"> 1. About You</a>
+			   </li>
+				<li class="add_active" role="presentation" id="about_your_business">
+					<a  href="javascript:;" aria-controls="business" role="tab" data-toggle="tab">2. About Your Business</a>
+				</li>
+		  </ul>
+
+			<div class="tabs-stage no_border">
+    <div id="tab-1" >
+        <div id="upload-ad" >
+
+					<form class="form-item" action="" id="primaryPostForm" method="POST" enctype="multipart/form-data" onsubmit="return validate()">
+					 <!-- Tab panes -->
+  <div class="tab-content">
+
+					 <div role="tabpanel" class="tab-pane active" id="profile">
+	  <fieldset class="input-title">
+						<label for="edit-field-category-und" class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;
+    font-weight: bold !important;
+    color: #1e73be !important;
+    border-bottom: 1px solid;
+    width: 96%;
+margin:10px;
+    padding-bottom: 8px;display:inline-block"><?php _e('Owner', 'classify') ?></label>
+						<div class="padl10 field-type-list-boolean field-name-field-featured field-widget-options-onoff form-wrapper" id="edit-field-featured">
+
+								<label class="option checkbox control-label" for="edit-field-featured-und">
+									<input style="margin-right: 10px;" type="radio" id="owner" name="owner" value="Yes" ><?php _e('Yes', 'classify') ?> 
+								</label>
+<label class="option checkbox control-label" for="edit-field-featured-und">
+									<input style="margin-right: 10px;" type="radio" id="owner" name="owner" value="No" ><?php esc_html_e( 'No', 'classify' ); ?>
+								</label>
+									</div>
+					</fieldset>	
+<label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;
+    font-weight: bold !important;
+    color: #1e73be !important;
+    border-bottom: 1px solid;
+    width: 96%;
+margin:10px;
+    padding-bottom: 8px;display:none" id="lbl_business">Role in the business</label>
+							<input type="text" id="business_role" name="business_role" value="" size="60" class="form-text required input-textarea half" placeholder="Role in the business" style="margin-left: 10px;display: none" maxlength="50" >
+							
+							
+							<div class="clearfix"></div>
+
+							<label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;
+    font-weight: bold !important;
+    color: #1e73be !important;
+    border-bottom: 1px solid;
+    width: 96%;
+margin:10px;
+    padding-bottom: 8px;display:inline-block">Name<span class="gfield_required">*</span></label>
+	<div style="width:50%;float:left;">
+							<input type="text" id="firstname" name="firstname" style="margin-left:10px" value="" size="60" class="form-text required input-textarea half" placeholder="First" maxlength="50"><div id="first-err"></div>
+							
+							</div>
+							<div style="width:50%;float:left;">
+						<input type="text" id="lastname" name="lastname" value="" size="60" class="form-text required input-textarea half" placeholder="Last" maxlength="50" >	
+							<div id="last-err"></div>
+							</div>
+							<div class="clearfix"></div>
+
+							<label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;
+    font-weight: bold !important;
+    color: #1e73be !important;
+    border-bottom: 1px solid;
+    width: 96%;
+margin:10px;
+    padding-bottom: 8px;display:inline-block">Mailing Address</label>
+
+<div>
+<input type="text" id="street_address" name="street_address" value="" style="margin-left:10px;width:95% !important;" class="form-text required input-textarea half" placeholder="Street Address" maxlength="255">
+							</div>
+							
+							
+							<input  style="margin-left:10px;width: 95% !important;" type="text" id="address1" name="address" value="" class="form-text required input-textarea half" placeholder="Address Line 2">
+
+
+							<input type="text" style="margin-left:10px" id="city" name="city" value="" class="form-text required input-textarea half" placeholder="City" maxlength="50">
+<div class="controls"> 
+							<select id="state" name="state" class="form-select">
+							<?php foreach ($states['US'] as $key => $val) { ?>
+							<option value="<?php echo $key; ?>"><?php echo $val; ?></option>
+								<?php } ?>
+							</select>
+						</div>
+<div class="clearfix"></div>
+<div style="width:50%;float:left;">
+<input type="text" style="margin-left:10px" id="zipcode" name="zipcode" value="" class="form-text required input-textarea half" placeholder="zipcode" maxlength="6">
+</div>		
+<div class="clearfix"></div>
+
+<div style="width:50%;float:left;"><label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;
+    font-weight: bold !important;
+    color: #1e73be !important;
+    border-bottom: 1px solid;
+    width: 96%;
+margin:10px;
+    padding-bottom: 8px;display:inline-block">Contact Number<span class="gfield_required">*</span></label>
+</div>
+
+<div style="width:50%;float:left;"><label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;
+    font-weight: bold !important;
+    color: #1e73be !important;
+    border-bottom: 1px solid;
+    width: 96%;
+margin:10px;
+    padding-bottom: 8px;display:inline-block">Email Address<span class="gfield_required">*</span></label>
+</div>
+<div style="width:50%;float:left;">
+	
+
+<input style="margin-left:10px" type="text" id="contact" name="contact" value="" class="form-text required input-textarea half" placeholder="Contact Number" maxlength="15">
+	
+	<div id="contact-err"></div> </div>
+<div style="width:50%;float:left;">
+	<input style="margin-left:10px" type="text" id="email_address" name="email_address" value="" class="form-text required input-textarea half" placeholder="Email Address" maxlength="150">
+							
+							<br clear="all">
+	<div id="email-err"></div>
+</div>							
+						
+<div class="clearfix"></div>
+						<div class="publish-ad-button" style="text-align:center;margin: 41px 0px;float:none;display:block;width:auto;">
+							
+							<input type="hidden" name="submitted" id="next" value="true" />
+	<a  href="#business" aria-controls="business" role="tab" data-toggle="tab" class="theme_btn apend_active" id="edit-next" name="op" value="Publish Ad" type="submit">
+        <?php _e('Next', 'classify') ?>
+        </a>
+						</div>
+
+	</div>
+	
+	  <div role="tabpanel" class="tab-pane" id="business">
+     <label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;
+    font-weight: bold !important;
+    color: #1e73be !important;
+    border-bottom: 1px solid;
+    width: 96%;
+margin:10px;
+    padding-bottom: 8px;display:inline-block">Business Name<span class="gfield_required">*</span></label>
+<input style="margin-left:10px" type="text" id="business_name" name="business_name" value="" size="60" class="form-text required input-textarea half" placeholder="Business Name" maxlength="50">
+							
+<div class="clearfix"></div>
+<div id="business-err"></div>
+<label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;
+    font-weight: bold !important;
+    color: #1e73be !important;
+    border-bottom: 1px solid;
+    width: 96%;
+margin:10px;
+    padding-bottom: 8px;display:inline-block">Web Address</label>
+<input style="margin-left:10px" type="text" id="web_address" name="web_address" value="" size="60" class="form-text required input-textarea half" placeholder="Web Address"  maxlength="100">
+<div class="clearfix"></div>
+
+<div id="business_section">
+   <div  id="business_div">
+	<label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;
+		font-weight: bold !important;
+		color: #1e73be !important;
+		border-bottom: 1px solid;
+		width: 96%;
+	margin:10px;
+		padding-bottom: 8px;display:inline-block">Business Address<span class="gfield_required">*</span><a href="javascript:;" id="remove_addr" style="background: #1e73be;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+	 float:right;
+    width: 224px;">This Business Has No Address</a></label>
+	</div>						
+ <div id="primary_addr">
+<div style="width:100%;float:left;">
+<input type="text" id="street_add" name="street_add[]" value="" style="margin-left:10px;border: 1px solid #e7e7e7 !important;width:95% !important;padding-left: 10px !important;"class="form-text required input-textarea" placeholder="Street Address">
+							</div>
+							
+							<input  style="margin-left:10px;border: 1px solid #e7e7e7 !important;width:95% !important;padding-left: 10px !important;" type="text" id="bussiness_addr" name="bussiness_addr[]" value="" class="form-text required input-textarea" placeholder="Address Line 2">
+							
+							<input type="text" style="margin-left:10px" id="business_city" name="business_city[]" value="" class="form-text required input-textarea half" placeholder="City">
+						<div class="controls"> 
+							<select id="business_state" name="business_state[]" class="form-select">
+							<?php foreach ($states['US'] as $key => $val) { ?>
+							<option value="<?php echo $key; ?>"><?php echo $val; ?></option>
+								<?php } ?>
+							</select>
+						</div>
+					<div class="clearfix"></div>
+						<input type="text" style="margin-left:10px;padding-left:10px !important;" id="business_zipcode" name="business_zipcode[]" value="" class="form-text required input-textarea half" placeholder="zipcode">
+						<label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 16px !important;
+    font-weight: bold !important;
+    color: #1e73be !important;
+    width: 96%;
+	 margin-left:10px;
+    padding-bottom: 8px;display:inline-block">Contact Number<span class="gfield_required">*</span></label>
+			
+							<input style="margin-left:10px !important;" type="text" id="business_contact" name="business_contact[]" value="" size="60" class="form-text required input-textarea half" placeholder="Phone Number"><div class="clearfix"></div>
+							
+							<div class="spoouter">
+	<a href="javascript:;" id="add_address" style="background: #1e73be;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 159px;
+    margin: 18px 26pc 0px;">Add Another Address</a>
+</div>
+ </div>
+
+  <div class="input_fields_wrap2"></div>
+  
+  </div>
+<div style="display:none;" id="add_bussn_addr"><a href="javascript:;" id="insert_addr" style="background: #1e73be;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+	 float:right;
+    width: 224px;">Add business address</a></label></div>
+
+
+
+<label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;
+    font-weight: bold !important;
+    color: #1e73be !important;
+    border-bottom: 1px solid;
+    width: 96%;
+margin:10px;
+    padding-bottom: 8px;display:inline-block">Phone Number<span class="gfield_required">*</span></label>
+
+		
+							
+							<input style="margin-left:10px" type="text" id="phone_number" name="phone_number" value="" size="60" class="form-text required input-textarea half" placeholder="Phone Number" maxlength="15"><div class="clearfix"></div>
+<div id="phone-no-err"></div>
+
+				<label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;
+    font-weight: bold !important;
+    color: #1e73be !important;
+    border-bottom: 1px solid;
+    width: 96%;
+margin:10px;
+    padding-bottom: 8px;display:inline-block">Business Type<span class="gfield_required">*</span></label>			
+							
+							<div style="margin-left:10px" id="edit-field-category-wrapper" class="views-exposed-widget views-widget-filter-field_category">
+						    <div class="views-widget">
+						        <div class="control-group form-type-select form-item-field-category form-item">
+									<div class="controls"> 
+										<select id="category" name="category_name" class="form-select" style="display: none;">
+													
+											<option value=""><?php echo $trns_category; ?>...</option>
+											<?php
+											$args = array(
+												'hierarchical' => '0',
+												'hide_empty' => '0'
+											);
+											$categories = get_categories($args);
+										/*	print_r($categories);
+											die('Here');*/
+												foreach ($categories as $cat) {
+													if ($cat->category_parent == 0) { 
+														$catID = $cat->cat_ID;
+													?>
+														<option value="<?php echo $catID; ?>"><?php echo $cat->cat_name; ?></option>
+																			
+												<?php 
+													$args2 = array(
+														'hide_empty' => '0',
+														'parent' => $catID
+													);
+													$categories = get_categories($args2);
+													foreach ($categories as $cat) { ?>
+														<option value="<?php echo  $cat->cat_ID; ?>">- <?php echo $cat->cat_name; ?></option>
+												<?php } ?>
+
+												<?php } else { ?>
+												<?php }
+											} ?>
+
+										</select>
+									</div>
+								</div>
+						    </div>
+						</div>
+                                            <div id="cat-err"></div>
+					    <br clear="all">
+
+						<fieldset class="input-title">
+<label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;
+    font-weight: bold !important;
+    color: #1e73be !important;
+    border-bottom: 1px solid;
+    width: 96%;
+margin:10px;
+    padding-bottom: 8px;display:inline-block">Briefly describe the purpose of the business</label>
+							<textarea name="business_purpose" id="video" cols="15" rows="5" placeholder="Briefly describe the purpose of the business" maxlength="255"></textarea>
+							<p class="help-block"></p>
+						</fieldset>	
+						
+						<br clear="all">	
+							
+
+						<div class="publish-ad-button" style="text-align:center">
+							
+
+<a  href="#business" aria-controls="business" role="tab" data-toggle="tab" class="theme_btn apend_active" id="edit-back" style="margin-right:20px;margin-bottom:30px;">
+        <?php _e('Back', 'classify') ?>
+        </a>
+
+							<input type="hidden" name="submitted" id="submitted" value="true" />
+							<button class="theme_btn" id="edit-submit" name="op" value="Publish Ad" type="submit" style="margin-top:21px;"><?php _e('Lets Get Listed', 'classify') ?></button>
+						</div>
+						
+   </div>
+  
+     </div>
+
+
+					</form>
+
+	    		</div>
+    </div>
+
+</div>
+</div>
+
+
+
+</div>
+</section>
+
+
+ <script type='text/javascript' src='http://blacklistdir.rebelute.in/wp-content/themes/classify/js/jquery.maskedinput.js'></script>
+<script type="text/javascript">//<![CDATA[
+jQuery.noConflict();
+jQuery( document ).ready(function( $ ) {
+	 $('.tabs-nav li a').on('click', function (event) { 
+		event.preventDefault();
+		
+	    $('.tab-active').removeClass('tab-active');
+		$(this).parent().addClass('tab-active');
+		//$('.tabs-stage div').hide();
+		//alert( $(this).attr('href'));
+		if( '#tab-1' == $(this).attr('href')) {
+			$('#tab-1').show();
+			$('#tab-2').hide();
+		} else {
+			$('#tab-2').show();
+			$('#tab-1').hide();
+		 }	
+		
+	});
+	$('.tabs-nav a:first').trigger('click'); // Default
+});
+// C
+/*$(function(){
+// From http://learn.shayhowe.com/advanced-html-css/jquery
+
+// Change tab class and display content
+
+
+	$('.tabs-nav a:first').trigger('click'); // Default
+});//]]> 
+*/
+jQuery( document ).ready(function( $ ) {
+    $('form input[type="radio"]').on('click', function() {
+		
+        if ($(this).val() == 'No') {
+            $('#business_role').show();
+ 		    $('#lbl_business').show();
+
+        }
+        else {
+            $('#business_role').hide();
+			$('#lbl_business').hide();
+        }
+    });
+	
+	$('.publish-ad-button #edit-next').click(function () {
+		
+		/*$('#about_your_business').addClass("active");
+		$('#about_you').removeClass("active");
+		$('#about_you a').attr("href", "javascript:;");*/
+
+                $('#about_you a').attr("href", "javascript:;");
+
+                var first = $('#firstname').val();
+                first = first.trim();
+
+		 var last  =  $('#lastname').val();
+                 last = last.trim();
+
+
+		 var email_address =  $('#email_address').val();
+                 email_address = email_address.trim();
+
+		 var contact =  $('#contact').val();
+                 contact = contact.trim();
+
+		  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		 var valid = 'true';
+		 $('#first-err').empty();
+		 $('#last-err').empty();
+		
+		 $('#email-err').empty();
+		 $('#contact-err').empty(); 
+		 
+                if( '' == first ) {
+                    $('#first-err').html( "<span style='color:red;margin-left:10px;'>Firstname is required.</span>" );
+  		          $('#firstname').focus();
+			  valid = 'false';
+                          return false;
+	            }
+                    if( '' == last ) {
+                          $('#last-err').html( "<span style='color:red;margin-left:10px;'>Lastname is required.</span>" );
+			  $('#lastname').focus();
+			  valid = 'false';
+                          return false;
+	            } 
+                   
+                    if( '' == email_address ) {
+                          $('#email-err').html( "<span style='color:red;margin-left:10px;'>Email address is required.</span>" );
+			  $('#email_address').focus();
+			  valid = 'false';
+                          return false;
+	            } 
+                    if( '' == contact ) {
+                          $('#contact-err').html( "<span style='color:red;margin-left:10px;'>Contact number is required.</span>" );
+			  $('#contact').focus();
+			  valid = 'false';
+                          return false;
+	            } 
+                    if( '' != email_address ) {
+			 email_address = email_address.trim();
+			 if( false == re.test(email_address)) {
+				 
+				  $('#email-err').html( "<span style='color:red;margin-left:10px;'>Please enter a valid email address.</span>" );
+				  $('#email_address').focus();
+				  valid = 'false';
+                                  return false;
+			 } else {
+				  $('#email-err').html();
+			 }
+	            }
+		  
+		    if( 'true' == valid ) {
+			$('#business').removeClass('tab-pane');
+			$('#profile').addClass('tab-pane');
+			$('#business').show();
+			$('#about_you').removeClass('active');
+			$('#about_you').addClass('add_active');
+			$('#about_your_business').removeClass('add_active');
+			$('#about_your_business').addClass('active');
+			
+		    } else {
+			$('#profile').removeClass('tab-pane');
+			$('#business').hide();
+			 /*$('.tab-active').removeClass('tab-active');
+		        $(this).parent().addClass('tab-active');*/
+			
+		    }
+	}); 
+
+         $('.publish-ad-button #edit-back').click(function () {
+		
+		$('#about_you').show();
+		$('#business').hide();
+		$('#business').addClass('tab-pane');
+		$('#profile').removeClass('tab-pane');
+		$('#about_your_business').removeClass('active');
+		$('#about_your_business').addClass('add_active');
+		$('#about_you').addClass('active');
+		$('#about_you').removeClass('add_active');
+		
+	});
+
+
+});
+jQuery.noConflict();
+jQuery( document ).ready(function(  ) {
+	jQuery.mask.definitions['~'] = "[+-]";
+	jQuery("#contact").mask("(999) 999-9999");
+	jQuery("#phone_number").mask("(999) 999-9999");
+	
+});
+
+function validate() {
+
+	 var business_name = document.getElementById('business_name').value;
+         business_name = business_name.trim();
+
+	 var phone_number  = document.getElementById('phone_number').value; 
+         phone_number = phone_number.trim();
+
+	 var category  = document.getElementById('category').value; 
+	
+	 document.getElementById('business-err').innerHTML = "";
+	 document.getElementById('phone-no-err').innerHTML = "";
+	 document.getElementById('cat-err').innerHTML = "";
+	 
+         var valid = true;
+
+	 if( '' == business_name ) { 
+		document.getElementById('business-err').innerHTML = "<span style='color:red;margin-left:10px;'>Business name is required.</span>" ;
+	        document.getElementById('business_name').focus();
+    	        valid = false;
+                return false;
+	 } 
+	 if( '' == phone_number ) { 
+		document.getElementById('phone-no-err').innerHTML = "<span style='color:red;margin-left:10px;'>Phone number is required.</span>" ;
+	        document.getElementById('phone_number').focus();
+		valid = false;
+                return false;
+	 } 
+         /*if( '' != phone_number ) { 
+	        var regex = /^[0-9-+]+$/;
+	        if( !regex.test(phone_number)) {
+
+		      document.getElementById('phone-no-err').innerHTML = "<span style='color:red;margin-left:10px;'>Please enter digits.</span>" ;
+		      document.getElementById('phone_number').focus();
+			
+		      valid = false;
+                      return false;
+		}
+	 } */
+	 if( '' == category ) { 
+		document.getElementById('cat-err').innerHTML = "<span style='color:red;margin-left:10px;'>Business type is required.</span>" ;
+	        document.getElementById('category').focus();
+		valid = false;
+                return false;
+	 }
+         if( false == valid ) {
+		return false;
+	 } 
+}
+
+jQuery( document ).ready(function( $ ) {
+	$("#myModal").hide();
+    var max_fields      = 3; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_wrap2"); //Fields wrapper
+    var add_button      = $("#add_address"); //Add button ID
+   var y=3;
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+	
+        //e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><div style="width:100%;float:left;"><label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 20px !important;font-weight: bold !important;color: #1e73be !important;border-bottom: 1px solid;width: 96%;margin:10px;padding-bottom: 8px;display:inline-block;">Business Address<span class="gfield_required">*</span></label></div><div style="width:100%;float:left;"><input type="text" id="street_add'+y+'" name="street_add[]" value="" style="margin-left:10px;border: 1px solid #e7e7e7 !important;padding-left:10px !important;width:95% !important;"class="form-text required input-textarea" placeholder="Street Address"></div><input  style="margin-left:10px;border: 1px solid #e7e7e7 !important;padding-left:10px !important;width:95% !important;" type="text" id="bussiness_addr'+y+'" name="bussiness_addr[]" value="" class="form-text required input-textarea" placeholder="Address Line 2"><div class="clearfix"></div><div style="width:50%;float:left;"><input type="text" style="margin-left:10px" id="business_city'+y+'" name="business_city[]" value="" class="form-text required input-textarea half" placeholder="City"></div><div style="width:50%;float:left;"><div class="controls"><select id="business_state'+y+'" name="business_state[]" class="form-select">	<?php foreach ($states['US'] as $key => $val) { ?><option value="<?php echo $key; ?>"><?php echo $val; ?></option><?php } ?></select></div></div><div class="clearfix"></div><input type="text" style="margin-left:10px" id="business_zipcode'+y+'" name="business_zipcode[]" value="" class="form-text required input-textarea half" placeholder="zipcode"><label class="gfield_label gfield_label_before_complex" for="input_1_30_3" style="font-size: 16px !important;font-weight: bold !important;color: #1e73be !important;width: 96%;margin-left:10px;padding-bottom: 8px;display:inline-block;">Contact Number<span class="gfield_required">*</span></label><input style="margin-left:10px" type="text" id="business_contact'+y+'" name="business_contact[]" value="" size="60" class="form-text required input-textarea half" placeholder="Phone Number"><div class="clearfix"></div><a href="javascript:;" class="remove_field" style="background:#1e73be; color: #fff;font-size: 14px;text-align: center;text-decoration: none;display: inline-block;width: 159px;margin: 18px 26pc 0px;">Remove Address</a></div>'); //add input box
+            y++;
+        } 
+    });
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    });
+	
+	 $('#remove_addr').click(function(e){ //on add input button click
+		//$('#business_section').empty();
+		$('#primary_addr').hide();
+		$('#business_div').hide();
+		$('#add_bussn_addr').show();
+		$('.input_fields_wrap2').empty();
+	 });
+	 
+	 $('#insert_addr').click(function(e){ //on add input button click
+		 $('#add_bussn_addr').hide();
+		 $('#primary_addr').show();
+		 $('#business_div').show();
+	 });
+
+});	
+</script>
+  
+<style>
+
+.step-tab {
+	padding: 39px 30px;
+}
+
+ul, li, div {
+    background: hsla(0, 0%, 0%, 0);
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    font: 13px/20px "Droid Sans", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.tabs-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.tabs-nav li:first-child a {
+    border-right: 0;
+    -moz-border-radius-topleft: 6px;
+    -webkit-border-top-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+.tabs-nav .tab-active a {
+    background: hsl(0, 100%, 100%);
+    border-bottom-color: hsla(0, 0%, 0%, 0);
+    color: hsl(85, 54%, 51%);
+    cursor: default;
+}
+.tabs-nav a {
+    background: hsl(120, 11%, 96%);
+    border: 1px solid hsl(210, 6%, 79%);
+    color: hsl(215, 6%, 57%);
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 140px;
+}
+.tabs-nav li {
+    float: left;
+}
+.tabs-stage {
+    border: 1px solid hsl(210, 6%, 79%);
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    -ms-border-radius: 0 0 6px 6px;
+    -o-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px;
+
+    clear: both;
+    margin-bottom: 20px;
+    position: relative;
+    top: -1px;
+    width: 100%;
+}
+.tabs-stage p {
+    margin: 0;
+    padding: 20px;
+    color: hsl(0, 0%, 33%);
+}
+#category_chosen {
+	width: 480px !important;
+	min-height: 44px;
+	min-width: 79px;
+	border-left: 1px solid #dedede;
+}
+#state_chosen {
+ border-left: 1px solid #dedede;
+	 height: 40px;
+   
+    width: 487px !important;
+	 background-color: #f8f8f8;
+}
+#business_state_chosen {
+    border-left: 1px solid #dedede;
+	 height: 40px;
+   
+    width: 475px !important;
+	 background-color: #f8f8f8;
+}
+#upload-ad input {
+    color: none;
+}
+</style>
+<?php get_footer(); ?>
