@@ -34,29 +34,7 @@ class AdvanceSearch_Widget extends WP_Widget {
 	<form action="<?php echo home_url(); ?>" method="get" id="views-exposed-form-search-view-other-ads-page" accept-charset="UTF-8">
 	<input placeholder="<?php echo $trns_skeywords; ?>" type="text" id="edit-search-api-views-fulltext" name="s" value="" size="30" maxlength="128" class="form-text">
 	
-	<select id="edit-ad-location" name="post_location" class="form-select fa fa-caret-square-o-down fa-lg" style="display: none;">
-		<option value="All" selected="selected"><?php echo $trns_location; ?>...</option>
-
-		<?php
-
-			$args_location = array( 'posts_per_page' => -1 );
-			$lastposts = get_posts( $args_location );
-
-			$all_post_location = array();
-			foreach( $lastposts as $post ) {
-				$all_post_location[] = get_post_meta( $post->ID, 'post_location', true );
-			}
-
-			$directors = array_unique($all_post_location);
-			foreach ($directors as $director) { ?>
-				<option value="<?php echo $director; ?>"><?php echo $director; ?></option>
-			<?php }
-
-		?>
-
-		<?php wp_reset_query(); ?>
-
-	</select>
+	
 
 	<select id="edit-field-category-advance-search" name="category_name" class="form-select" style="display: none;">
 				
@@ -80,7 +58,7 @@ class AdvanceSearch_Widget extends WP_Widget {
 				);
 				$categories = get_categories($args2);
 				foreach ($categories as $cat) { ?>
-					<option value="<?php echo strtolower($cat->slug); ?>" data-id="">- <?php echo $cat->cat_name; ?></option>
+					<option value="<?php echo strtolower($cat->slug); ?>" data-id=""><?php echo $cat->cat_name; ?></option>
 			<?php } ?>
 
 			<?php } else { ?>
@@ -104,6 +82,7 @@ class AdvanceSearch_Widget extends WP_Widget {
 			  jQuery(".custom-field-cat-" + jQuery(this).val()).show();
 			});
 		});
+
 	</script>
 	<?php 
 	
@@ -220,8 +199,9 @@ class AdvanceSearch_Widget extends WP_Widget {
 
 	
 	<input class="search-submit" type="submit" value="Search" name="" style="width:auto; height:35px;">
-
+<!--<div id="search_result"></div>-->
 </form>
+
 </div>
 	<?php 			
 		echo $argz['after_widget'];

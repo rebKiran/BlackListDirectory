@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+/*
+echo '<pre/>';
+print_r($_SESSION);*/
+
 wp_cache_flush();
 /*
 WC()->cart->empty_cart();
@@ -49,9 +53,6 @@ global $wpdb;
 $valid = 'true';	
 global $woocommerce;
 if( 'Next' == $_POST['next_btn'] ) { 
-		
-	$wp_session = WP_Session::get_instance();
-	$data = json_decode($wp_session->json_out() );
 	
 	global $wpdb;
 	
@@ -70,11 +71,9 @@ if( 'Next' == $_POST['next_btn'] ) {
                 
 
 		$banner 	= trim($_POST['banner']);
-	        $name_in_caps 	= (isset($_POST['name_in_caps'])) ? 'Yes' : 'No';
+	   $name_in_caps 	= (isset($_POST['name_in_caps'])) ? 'Yes' : 'No';
 		$bold_print 	= (isset($_POST['bold_print'])) ? 'Yes' : 'No';
 		$border 	= (isset($_POST['border'])) ? 'Yes' : 'No';
-		
-		
 		
 		if(!is_array($directory_listing )) {
 			$sql = "INSERT INTO `wp_directory_listing` (`questionnaire_id`,`name_in_caps`, `bold_print`, `border`, `product_id`, `token`) VALUES ('".$_SESSION['questionnaire_id']."','$name_in_caps', '$bold_print', '$border', '$banner', '$data->number')"; 
@@ -96,35 +95,36 @@ if( 'Next' == $_POST['next_btn'] ) {
 			
 			$wpdb->query($sql);
 		}
-                /* $woocommerce->cart->add_to_cart($banner, 1);
-		
-		if(isset($_POST['name_in_caps'])) {
-			$woocommerce->cart->add_to_cart($_POST['name_in_caps'], 1);
-		}
-		if(isset($_POST['bold_print'])) {
-			$woocommerce->cart->add_to_cart($_POST['bold_print'], 1);
-		}
-		if(isset($_POST['border'])) {
-			$woocommerce->cart->add_to_cart($_POST['border'], 1);
-		} */
-                 
-                if('2077' == $banner) { 
-                    $url = "http://blacklistdir.rebelute.in/directory-listing/";	
+         
+      if('2077' == $banner) { 
+             $url = "http://blacklistdir.rebelute.in/directory-listing/";	
 		?>
-	        <script type="text/javascript">
+	   <script type="text/javascript">
                   window.location='<?php echo $url;?>';
 		</script>
 
-             <?php   } else {
+      <?php } else {  
+				
+			if(is_array($_SESSION['wpc_generated_data']) && !empty($_SESSION['wpc_generated_data'])) { 
+					 if(!empty($_SESSION['product']) && $banner == $_SESSION['product'] ) {
+						 
+						 $product = $_SESSION['product'];
+						 $edit_id = array_keys($_SESSION['wpc_generated_data'][$product]);
+						 $url = "http://blacklistdir.rebelute.in/design/edit/" . $_SESSION['product'] . '/' .$edit_id[0] ;
+					 } else {
+						  $url = "http://blacklistdir.rebelute.in/design-your-ads/";
+					 }	 
+				 } else {  
                    $url = "http://blacklistdir.rebelute.in/design-your-ads/";
+				 } 
+							
              ?>
 	        <script type="text/javascript">
                      window.location='<?php echo $url;?>';
                </script>
 <?php
          }
-  
-          } else {
+      } else {
 		
 		$url = "http://blacklistdir.rebelute.in/web-listing-details/";	
 		
@@ -302,7 +302,7 @@ if( 'Back' == $_POST['back_btn'] ) {
 <section class="ads-main-page ">
 	<div class="container">
 		<div class="tabs-stage no_border">
-			<form class="form-item" action="" id="primaryPostForm" method="POST" enctype="multipart/form-data" onsubmit="return validate()">
+			<form class="form-item" action="" id="primaryPostForm" method="POST" enctype="multipart/form-data">
 				<!-- <div id="upload-ad" > -->
 				<h2 style="margin-left:10px"></h2>
 				<?php if($valid == 'false') { ?>
@@ -331,7 +331,7 @@ if( 'Back' == $_POST['back_btn'] ) {
 								
 								if('size' == $strkey) {
 									if( 0 == $i ){ ?>
-										<div class="Heading test1"><div class="Cell cell_heading table_background"></div>
+										<div class="Heading test1">
 									<?php	} ?>
 										<div class="Cell cell_heading table_background"><?php echo $packageName; ?></div>
 									<?php if( count($banner_sizes) - 1 == $i ){ ?>
@@ -354,7 +354,7 @@ if( 'Back' == $_POST['back_btn'] ) {
 								
 								if('label' == $strkey ) { 
 									if( 0 == $i ){ ?>
-								<div class="Heading test"><div class="Cell cell_heading">Price</div>
+								<div class="Heading test">
 								<?php	} ?>
 									<div class="Cell cell_heading"><?php echo '$ ' . get_post_meta( $banner_size['product_id'], '_sale_price', true ); ?></div>
 								<?php if( count($banner_sizes) - 1 == $i ){ ?>
@@ -376,7 +376,7 @@ if( 'Back' == $_POST['back_btn'] ) {
 								
 								if('id' == $strkey ) { 
 									if( 0 == $i ){ ?>
-									<div class="Heading test"><div class="Cell cell_heading">Size</div>
+									<div class="Heading test">
 									<?php	} ?>
 										<div class="Cell size_container">
 										<?php echo $size = (!empty($packageSize)) ? $packageSize : 'N/A'; ?></div>
@@ -394,7 +394,7 @@ if( 'Back' == $_POST['back_btn'] ) {
 							{ 
 								if('product_id' == $strkey ) { 
 									if( 0 == $i ){ ?>
-										<div class="Heading test"><div class="Cell"></div>
+										<div class="Heading test">
 									<?php	} ?>
 										<div class="Cell"><input type="radio" id="banner_<?php echo $banner_size['product_id'];?>" name="banner" value="<?php echo $banner_size['product_id']; ?>" <?php if(!empty($mylisting) && $banner_size['product_id'] == $mylisting['product_id']){ ?> checked="checked" <?php } ?> ></div>
 									<?php if( count($banner_sizes) - 1 == $i ){ ?>
@@ -469,7 +469,7 @@ if( 'Back' == $_POST['back_btn'] ) {
 					  <tbody>
 						<tr>
 							<td><strong>PRICE</strong></td>
-							<td></td>
+							<td>$135</td>
 						  </tr>
 						  <tr>
 							<td><p>Website Listing</p></td>
@@ -518,7 +518,7 @@ if( 'Back' == $_POST['back_btn'] ) {
 					  <tbody>
 						<tr>
 							<td><strong>PRICE</strong></td>
-							<td></td>
+							<td>$125</td>
 						  </tr>
 						  <tr>
 							<td><p>Website Listing</p></td>
@@ -830,7 +830,7 @@ Success!
  }  
  .label_header {
     text-align: center;
-    border: 1px solid #000;
+   
     width: 100%;
     color: #000;
     font-size: 16px;
@@ -864,6 +864,11 @@ div.upload input {
     height: 40px !important;
     opacity: 0 !important;
     overflow: hidden !important;
+}
+.Heading.test1 .Cell {
+    padding: 10px;
+    padding-bottom: 10px;
+	width: 100px;
 }
 </style>
 <?php get_footer(); ?>

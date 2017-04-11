@@ -18,6 +18,8 @@ get_header(); ?>
 global $wpdb, $woocommerce;
   unset($_SESSION['number']);
   unset($_SESSION['questionnaire_id']);
+  unset($_SESSION['banner_price']);
+  unset($_SESSION['product']);
 
    /* $wp_session = WP_Session::get_instance();
     $wp_session->reset();
@@ -30,9 +32,9 @@ global $wpdb, $woocommerce;
 <section class="ads-main-page ">
 	<div class="container">
 		<div class="tabs-stage no_border">
-			<form class="form-item" action="" id="primaryPostForm" method="POST" enctype="multipart/form-data" onsubmit="return validate()">
+			<form class="form-item" action="" id="primaryPostForm" method="POST" enctype="multipart/form-data">
 				<!-- <div id="upload-ad" > -->
-				<h2 style="margin-left:10px">THANK YOU FOR YOUR SUBMISSON!!!</h2>
+				<h2 style="margin-left:10px">THANK YOU FOR YOUR SUBMISSION!!!</h2>
 				
 				
 				<h4 style="margin-left:10px"> Please give THE BLACK LIST LLC. 48 hours To review your submission.</h4>

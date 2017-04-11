@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="270" height="270" viewBox="0 0 270 270" xml:space="preserve">
+<desc>Created with Fabric.js 1.6.7</desc>
+<defs></defs>
+	<g transform="translate(78.55 38.3) scale(2.24 1.63)">
+		<text font-family="Shadows Into Light" font-size="18" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(110,33,110); fill-rule: nonzero; opacity: 1;" >
+			<tspan x="-29.95" y="5.67" style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(110,33,110); fill-rule: ; opacity: 1;">D</tspan>
+			<tspan x="-19.97" y="5.67" style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(110,33,110); fill-rule: ; opacity: 1;">D</tspan>
+			<tspan x="-9.98" y="5.67" style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(110,33,110); fill-rule: ; opacity: 1;">D</tspan>
+			<tspan x="0" y="5.67" style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(110,33,110); fill-rule: ; opacity: 1;">D</tspan>
+			<tspan x="9.98" y="5.67" style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(110,33,110); fill-rule: ; opacity: 1;">D</tspan>
+			<tspan x="19.97" y="5.67" style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(110,33,110); fill-rule: ; opacity: 1;">D</tspan>
+		</text>
+	</g>
+	<g transform="translate(59.48 106.21) scale(3.03 1)">
+		<text font-family="Shadows Into Light" font-size="18" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(158,51,158); fill-rule: nonzero; opacity: 1;" >
+			<tspan x="-14.25" y="5.67" fill="#9e339e">ddddd</tspan>
+		</text>
+	</g>
+</svg>

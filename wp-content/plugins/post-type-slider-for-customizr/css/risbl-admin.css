@@ -1,0 +1,21 @@
+#risbl_prefix_order_slider table th {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+#risbl_prefix_order_slider th, #risbl_prefix_order_slider td {
+  padding-left: 0;
+  padding-right: 0; }
+#risbl_prefix_order_slider .sort {
+  width: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: move; }
+#risbl_prefix_order_slider .col-image {
+  width: 15%; }
+#risbl_prefix_order_slider .col-title {
+  width: 70%; }
+#risbl_prefix_order_slider .col-action {
+  width: 10%; }
+
+.risbl-metabox-slider-fields.hide-fields {
+  display: none; }

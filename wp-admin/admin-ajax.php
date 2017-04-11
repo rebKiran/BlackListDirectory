@@ -31,6 +31,7 @@ if ( empty( $_REQUEST['action'] ) )
 /** Load WordPress Administration APIs */
 require_once( ABSPATH . 'wp-admin/includes/admin.php' );
 
+
 /** Load Ajax Handlers for WordPress Core */
 require_once( ABSPATH . 'wp-admin/includes/ajax-actions.php' );
 
@@ -40,8 +41,9 @@ require_once( ABSPATH . 'wp-admin/includes/ajax-actions.php' );
 send_nosniff_header();
 nocache_headers();
 
+
 /** This action is documented in wp-admin/admin.php */
-if( 'visualbannercreator_upload' != $_REQUEST['action'] && 'add_review' != $_REQUEST['action'] && 'bc_save_banner_img' != $_REQUEST['action'] && 'send_contact' != $_REQUEST['action'] ) {
+if( 'visualbannercreator_upload' != $_REQUEST['action'] && 'add_review' != $_REQUEST['action'] && 'bc_save_banner_img' != $_REQUEST['action'] && 'send_contact' != $_REQUEST['action'] && 'search_category' != $_REQUEST['action'] && 'handle_picture_upload' != $_REQUEST['action'] && 'handle_custom_design_upload' != $_REQUEST['action'] && 'get_design_price' != $_REQUEST['action'] && 'add_custom_design_to_cart' != $_REQUEST['action']  && 'add_custom_design_to_cart_ajax' != $_REQUEST['action'] && 'vc_edit_form' != $_REQUEST['action'] && 'heartbeat' != $_REQUEST['action'] && 'wpb_single_image_src' != $_REQUEST['action'] && 'get_subcategory' != $_REQUEST['action']) {
 	do_action( 'admin_init' );
 } 
 

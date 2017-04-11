@@ -435,7 +435,7 @@ color: #900;
 
 @media only screen and (max-width: 768px) { 
 .left_div {
-display:none;
+display:none !important;
 }
 
 #mobileMenu-menu-menu-1 {
@@ -458,8 +458,8 @@ float: left;
 }
 
 .right_div {
-margin-left:0px;
-width: 100%;
+margin-left:0px !important;
+width: 100% !important;
 }
 }
 
@@ -478,7 +478,7 @@ padding:0px !important;
 
 @media only screen and (min-width: 769px)  and  (max-width: 1024px) {
 .right_div {
-    width: 100%;
+    width: 100% !important;
     margin-left: 304px;
 }
 
@@ -490,7 +490,7 @@ padding:0px !important;
 
 @media only screen and (max-width: 768px) {
 .right_div {
-    width: 100%;
+    width: 100% !important;
     margin-left: 0%;
 }
 
@@ -1326,3 +1326,111 @@ footer #contact-form #contactName, #contact-form #author, #contact-form #email, 
     font-weight: 600;
     width: 100%;
 }
+
+.page-id-3060 .fpd-topbar .fpd-navigation div span  .fpd-label {
+     color:#FFF !important; 
+}
+
+.advanced-search-text {
+    border: 1px solid #ccc;
+    float: left;
+   padding-top: 10px;
+     width: 30%;
+}
+.advanced-search-select-box {
+   width:30%;
+   float:left;
+   margin-left:7px;
+}
+
+.design-ad-show {
+    display:block;
+}
+
+
+.design-ad-hide {
+     display:none;
+}
+.design-right-adv-full {
+   float:none;margin-left:0px;width:100%;
+}
+
+.design-right-adv-half {
+   float:left; margin-left:304px; width:78%;
+}
+
+.search-btn-style {
+    clear: both;
+    margin-left: 38%;
+    padding-top: 29px;
+}
+
+#home-slider .slick-track {
+height: 184px;
+}
+/*
+#home-slider .slick-image-slide img {
+width:100%;
+height: 100%;
+}*/
+
+
+#wpc-design-btn-box #wpc-cart-box .wpc-qty-container > button, #wpc-cart-box button {
+    background-image:none !important;
+}
+
+
+.text-center {
+    text-align:cneter;
+}
+
+.icon-div {
+    background:#1e73be !important;
+    padding:20px;
+    width: 50px !important;
+    height: 50px !important;
+    margin-bottom: 7px !important;
+}
+
+.custom-dropdown {
+   text-align:left !important;
+   padding-left:0px;
+}
+
+.custom-dropdown li a {
+   color:#575757;
+   font-size: 12px;
+}
+
+.custom-dropdown .dropdown .caret {
+    margin-top: 12px;
+    margin-left: 5px;
+}
+
+.custom-dropdown .dropdown-menu {
+    padding: 0;
+    border-radius: 5px;
+
+}
+
+.dropdown-menu > li > a {
+    padding: 6px 20px !important;
+}
+
+.border-div {
+    border: 1px solid #ccc;
+    padding: 16px 0px;
+}
+
+.show-div {
+  cursor:pointer;
+}
+
+.advps-excerpt-one {
+   width: 100% !important;
+   height: 28% !important;
+   bottom: 0 !important;
+   top: auto !important;
+}
+
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="213" height="299.77777777777777" viewBox="0 0 405 570" xml:space="preserve">
+<desc>Created with Fabric.js 1.6.7</desc>
+<defs></defs>
+	<g transform="translate(208.54 306.92) scale(1.4 2.69)">
+		<text font-family="Abril Fatface" font-size="20" font-weight="bold" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(79,113,185); fill-rule: nonzero; opacity: 1;" >
+			<tspan x="-85.04" y="6.3" fill="rgb(79, 113, 185)">This is a text demo</tspan>
+		</text>
+	</g>
+<rect x="-25" y="-25" rx="10" ry="10" width="50" height="50" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(79,113,185); fill-rule: nonzero; opacity: 1;" transform="translate(87.59 85.3)"/>
+<circle cx="0" cy="0" r="25" style="stroke: rgb(79,113,185); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(79,113,185); fill-rule: nonzero; opacity: 1;" transform="translate(247.71 85.3) "/>
+</svg>

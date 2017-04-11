@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="150" height="570" viewBox="0 0 150 570" xml:space="preserve">
+<desc>Created with Fabric.js 1.6.7</desc>
+<defs></defs>
+	<g transform="translate(75 285)">
+		<text font-family="Shadows Into Light" font-size="15" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(79,113,185); fill-rule: nonzero; opacity: 1;" >
+			<tspan x="-21.23" y="4.73" fill="rgb(79, 113, 185)">saasdasd</tspan>
+		</text>
+	</g>
+	<g transform="translate(75 163.42)">
+		<text font-family="Shadows Into Light" font-size="15" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(79,113,185); fill-rule: nonzero; opacity: 1;" >
+			<tspan x="-45.73" y="4.73" fill="rgb(79, 113, 185)">DSFSDFSDFSDF</tspan>
+		</text>
+	</g>
+<rect x="-25" y="-25" rx="0" ry="0" width="50" height="50" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(79,113,185); fill-rule: nonzero; opacity: 1;" transform="translate(75.99 383.65)"/>
+<polygon points="0,50 45,80 85,50 70,0 17,0 " style="stroke: rgb(79,113,185); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(79,113,185); fill-rule: nonzero; opacity: 1;" transform="translate(79.93 66.77) translate(-42.5, -40)  "/>
+<circle cx="0" cy="0" r="25" style="stroke: rgb(79,113,185); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(79,113,185); fill-rule: nonzero; opacity: 1;" transform="translate(71.05 227.2) "/>
+</svg>

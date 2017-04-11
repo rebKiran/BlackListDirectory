@@ -1118,6 +1118,7 @@ display:none;
 }
 .category-box.span3{
 	margin-left:27px !important;
+	    width: 315px;
 }
 .category-box.first{
 margin-left:0px !important;
@@ -7745,4 +7746,9 @@ color:#fff !important;
 .ad-box {
 	border:1px solid #808285;
 	width: 287px !important;
+}
+
+.postid-2250 .ads-main-page .span8.first {
+	margin: 0 auto !important;
+    float: none !important;
 }

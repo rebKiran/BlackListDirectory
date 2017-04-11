@@ -47,7 +47,7 @@
 <?php 
 
 $layout = $redux_demo['layout-version'];
-
+$pagename = get_query_var('pagename');  
 ?>
 
 <body <?php if($layout == 2){ ?>id="boxed" <?php } ?> <?php body_class(); ?>>
@@ -62,7 +62,7 @@ $layout = $redux_demo['layout-version'];
     ?>
 
 
-<div class="left_div">
+<div class="left_div <?php if( 'design-your-ads' != $pagename && 'design' != $pagename ) { ?>design-ad-show<?php } else { ?> design-ad-hide <?php } ?>">
 <div id="mCSB_1_container" class="mCSB_container">
 <header class="header-bar">
  <div class="branding">
@@ -154,7 +154,7 @@ think about <br/> THE BLACK LIST
 </div>
 </div>
 
-<div class="right_div">	
+<div class="right_div <?php if( 'design-your-ads' == $pagename || 'design' == $pagename ) { ?>design-right-adv-full<?php } else { ?>design-right-adv-half<?php } ?>" >	
 <div id="top-menu-block">
 		<div class="container">
 			<div id="register-login-block-top">

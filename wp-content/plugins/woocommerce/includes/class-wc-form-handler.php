@@ -659,14 +659,14 @@ class WC_Form_Handler {
 			if ( $order->has_status( 'cancelled' ) ) { 
 
 				unset($_SESSION['number']);
-                                unset($_SESSION['questionnaire_id']);
+                                unset($_SESSION['questionnaire_id']);								unset($_SESSION['banner_price']);																unset($_SESSION['product']);
                                 WC()->cart->empty_cart();
                                 wp_safe_redirect( "http://blacklistdir.rebelute.in/become-a-member/" );
 				exit;
 				// Already cancelled - take no action
 			} elseif ( $user_can_cancel && $order_can_cancel && $order->id === $order_id && $order->order_key === $order_key ) {
                                unset($_SESSION['number']);
-                               unset($_SESSION['questionnaire_id']);
+                               unset($_SESSION['questionnaire_id']);							   							   unset($_SESSION['banner_price']);															   unset($_SESSION['product']);
                                WC()->cart->empty_cart();
                                 wp_safe_redirect( "http://blacklistdir.rebelute.in/become-a-member/" );
 
@@ -683,7 +683,7 @@ class WC_Form_Handler {
 			} else {
 
                                 unset($_SESSION['number']);
-                                unset($_SESSION['questionnaire_id']);
+                                unset($_SESSION['questionnaire_id']);																unset($_SESSION['banner_price']);																unset($_SESSION['product']);
                                 WC()->cart->empty_cart();
 				wc_add_notice( __( 'Invalid order.', 'woocommerce' ), 'error' );
                                 wp_safe_redirect( "http://blacklistdir.rebelute.in/become-a-member/" );

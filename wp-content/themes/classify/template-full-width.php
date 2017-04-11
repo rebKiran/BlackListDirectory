@@ -468,4 +468,4 @@ $trns_skeywords = $redux_demo['trns_skeywords'];
 
     </section>
 
-<?php get_footer(); ?>
+<?php  get_footer();  ?>

@@ -1,0 +1,36 @@
+// Theme options
+
+#risbl_prefix_order_slider{
+  table th{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  th, td{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .sort{
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: move;
+  }
+  .col-image{
+    width: 15%;
+  }
+  .col-title{
+    width: 70%;
+  }
+  .col-action{
+    width: 10%;
+  }
+}
+
+// Meta box
+
+.risbl-metabox-slider-fields{
+  &.hide-fields{
+    display: none;
+  }
+}

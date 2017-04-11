@@ -1,0 +1,141 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Post Type Slider for Customizr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Sat Jan 09 2016 17:13:51 GMT+0700 (WIB)\n"
+"PO-Revision-Date: Sat Jan 09 2016 17:13:55 GMT+0700 (WIB)\n"
+"Last-Translator: Kharis Sulistiyono <kharisblank@gmail.com>\n"
+"Language-Team: \n"
+"Language: English\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ../../plugins/risbl-post-type-slider-for-customizr\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: en_US\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:57
+msgid "Settings"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:82 ../..
+#: /plugins/risbl-post-type-slider-for-customizr/class-admin.php:82 ../..
+#: /plugins/risbl-post-type-slider-for-customizr/class-admin.php:111
+msgid "CPT Customizr Slider"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:120
+msgid "Post Type"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:156
+msgid "Order slider"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:172
+msgid "Slide Image"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:173
+msgid "Title"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:174
+msgid "Action"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:231
+msgid "Edit"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:232
+msgid "Edit / Delete"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:247
+msgid "No slider has been set for this selected post type, yet."
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:265
+msgid "Enable?"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:269
+msgid "Yes, I want to use the selected post type to replace the default main slider."
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-admin.php:278
+msgid "Save Changes"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-metabox.php:200
+msgid "Set as slider item?"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-metabox.php:214
+msgid "Title text (80 char. max length)"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-metabox.php:221
+msgid "Description text (below the title, 250 char. max length)"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-metabox.php:228
+msgid "Title and text color"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-metabox.php:236
+msgid "Button text (80 char. max length)"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-metabox.php:243
+msgid "Choose a linked page or post (among the last 100)."
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-metabox.php:248
+msgid "No link"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-metabox.php:257
+msgid ""
+"or a custom link (leave this empty if you already selected a page or post "
+"above)"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-metabox.php:263
+msgid "Open link in a new page/tab"
+msgstr ""
+
+#: ../../plugins/risbl-post-type-slider-for-customizr/class-metabox.php:270
+msgid "Link the whole slide"
+msgstr ""
+
+#. Name of the plugin
+msgid "Post Type Slider for Customizr"
+msgstr ""
+
+#. URI of the plugin
+msgid "http://risbl.co/wp/post-type-slider-for-customizr"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Alternative slider creation for Customizr theme. Replace the existing slider "
+"with any choosen post type."
+msgstr ""
+
+#. Author of the plugin
+msgid "Kharis Sulistiyono"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://risbl.co/wp"
+msgstr ""

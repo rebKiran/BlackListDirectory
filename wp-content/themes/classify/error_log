@@ -1,0 +1,1 @@
+[09-Apr-2017 10:44:28 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/rebelute/public_html/blacklistdir/wp-content/themes/classify/404.php on line 10

@@ -169,7 +169,7 @@ if(isset($_POST['favorite'])){
 	    	<div class="span8 first">
 			
 				<?php
-				
+				 $post = get_post( $image_post_id ); 
 				$attachments = get_children(array('post_parent' => $post->ID,
 							'post_status' => 'inherit',
 							'post_type' => 'attachment',
@@ -206,7 +206,14 @@ if(isset($_POST['favorite'])){
 
 							?>
 <div><center>
-							 <img class="img-style" src='<?php echo $full_img_url; ?>'/> </center>
+<?php  if( strpos( $full_img_url , '/WPC/') !== false ) {  ?>
+							 <img class="img-style" src='<?php echo $full_img_url .'/part1/part1.png'; ?>'/> 
+<?php } else { ?>
+
+<img class="img-style" src='<?php echo $full_img_url; ?>'/> 
+<?php } ?>
+
+</center>
 </div>
 
 					<?php	} 
@@ -895,7 +902,7 @@ $qry_busn = "SELECT ba.*
 				$hiderads = $redux_demo['hide-rads'];
 				?>			
 				<?php if($hiderads == 1) { ?>
-	    		<div class="related-ads">
+	    		<!--<div class="related-ads">
 				
 				<?php 
 					$homeAdImg= $redux_demo['post_ad']['url']; 
@@ -1009,14 +1016,14 @@ $qry_busn = "SELECT ba.*
 
 	    			</div>
 
-	    		</div>
+	    		</div> -->
 				<?php } ?>
 				
 				<?php
 				$author_message_box_on = $redux_demo['author-msg-box-off'];
 				if($author_message_box_on == 1){
 				?>
-				<div class="full">
+				<!--<div class="full">
 						<h3><?php _e( 'TO AUTHOR', 'classify' ); ?></h3>
 
 						
@@ -1082,7 +1089,7 @@ $qry_busn = "SELECT ba.*
 
 						</div>
 
-					</div>
+					</div> -->
 					<?php } ?>
 					
 

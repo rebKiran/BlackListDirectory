@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 /*
 WC()->cart->empty_cart();
 print_r(WC()->cart);*/
@@ -15,9 +16,6 @@ print_r(WC()->cart);*/
 
 get_header(); ?>
 <?php 
-$wp_session = WP_Session::get_instance();
-$data = json_decode($wp_session->json_out() ); 
-
 
 $query = "SELECT q.business_name,q.web_address,q.id
 			FROM {$wpdb->prefix}questionnaire As q
@@ -27,24 +25,6 @@ $results = $wpdb->get_results($query,  ARRAY_A );
 
 $mylisting = $wpdb->get_row( "SELECT * FROM wp_website_listing WHERE questionnaire_id = '".$_SESSION['questionnaire_id']."' ", ARRAY_A );
 
-
-/*
- $query = "SELECT products.ID as product_id,products.post_title,postmeta.meta_value AS price
-						FROM {$wpdb->prefix}postmeta AS postmeta
-					   JOIN {$wpdb->prefix}posts AS products ON ( products.ID = postmeta.post_id )
-						WHERE postmeta.meta_key = '_sale_price'
-						AND products.ID IN ('2077','2078','2079','2081')";
-						
-	$results = $wpdb->get_results($query,  ARRAY_A );		
-	
-	$query2 = "SELECT products.ID as product_id,products.post_title,postmeta.meta_value AS price
-						FROM {$wpdb->prefix}postmeta AS postmeta
-					   JOIN {$wpdb->prefix}posts AS products ON ( products.ID = postmeta.post_id )
-						WHERE postmeta.meta_key = '_sale_price'
-						AND products.ID IN ('2082','2087','2084','2086')";
-						
-	$results2 = $wpdb->get_results($query2,  ARRAY_A );				
-*/
 global $wpdb;
 global $woocommerce;
 $valid = 'true';	
@@ -55,10 +35,6 @@ if( 'Next' == $_POST['next_btn'] ) {
           $url = "http://blacklistdir.rebelute.in/web-listing-details/"; 
     
 	
-		$wp_session = WP_Session::get_instance();
-		$data = json_decode($wp_session->json_out() );
-		
-
 	        $listing			= trim($_POST['listing']);
 		$name_in_caps 	= (isset($_POST['name_in_caps']) ) ? 'Yes' : 'No';
 		$bold_print 	= (isset($_POST['bold_print']) ) ? 'Yes' : 'No';
@@ -207,9 +183,16 @@ if( 'Next' == $_POST['next_btn'] ) {
 <?php 
 } 
 if( 'Back' == $_POST['back_btn'] ) {
-     
-	 $url = "http://blacklistdir.rebelute.in/directory-listing/";
-      
+    if(is_array($_SESSION['wpc_generated_data'])) {
+		 if(!empty($_SESSION['product'])) {
+			 
+			 $product = $_SESSION['product'];
+			 $edit_id = array_keys($_SESSION['wpc_generated_data'][$product]);
+			 $url = "http://blacklistdir.rebelute.in/design/edit/" . $_SESSION['product'] . '/' .$edit_id[0] ;
+		 }	 
+	 } else {
+			$url = "http://blacklistdir.rebelute.in/directory-listing/";
+    } 
 	 ?>
 	   <script type="text/javascript">
                window.location='<?php echo $url;?>';
@@ -220,7 +203,7 @@ if( 'Back' == $_POST['back_btn'] ) {
 <section class="ads-main-page ">
 	<div class="container">
 		<div class="tabs-stage no_border">
-			<form class="form-item" action="" id="primaryPostForm" method="POST" enctype="multipart/form-data" onsubmit="return validate()">
+			<form class="form-item" action="" id="primaryPostForm" method="POST" enctype="multipart/form-data">
 				<!-- <div id="upload-ad" > -->
 				<h2 style="margin-left:10px"></h2>
 				<?php if($valid == 'false') { ?>

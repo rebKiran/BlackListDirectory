@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="270" height="150" viewBox="0 0 270 150" xml:space="preserve">
+<desc>Created with Fabric.js 1.6.7</desc>
+<defs/>
+<polygon points="35,90 50,81 63,90 69,73 88,73 82,56 96,46 82,36 87,18 70,18 63,0 49,12 35,0 28,18 11,18 17,35 0,46 17,56 11,73 28,73 " style="stroke: rgb(79,113,185); stroke-width: 5; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(48,22,48); fill-rule: nonzero; opacity: 0.9;" transform="translate(139.17 72.23) scale(2.05 1.47) translate(-48, -45)  "/>
+<g transform="translate(254.12 60.2)">
+<image xlink:href="data:image/png;base64,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" x="-32" y="-32" style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" width="64" height="64" preserveAspectRatio="none"/>
+</g>
+<g transform="translate(135 75.01)" style="">
+		<g transform="translate(-44.27 2.43) rotate(-15)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-6" y="6.93" fill="rgb(31, 207, 87)">c</tspan>
+		</text>
+	</g>
+		<g transform="translate(-37.96 0.87) rotate(-13)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-6.58" y="6.93" fill="rgb(31, 207, 87)">o</tspan>
+		</text>
+	</g>
+		<g transform="translate(-31.39 -0.26) rotate(-11)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-7.34" y="6.93" fill="rgb(31, 207, 87)">n</tspan>
+		</text>
+	</g>
+		<g transform="translate(-27.55 -1.32) rotate(-9)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-5.34" y="6.93" fill="rgb(31, 207, 87)">s</tspan>
+		</text>
+	</g>
+		<g transform="translate(-22.91 -2.08) rotate(-7)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-4.09" y="6.93" fill="rgb(31, 207, 87)">t</tspan>
+		</text>
+	</g>
+		<g transform="translate(-15.95 -2.7) rotate(-5)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-5.15" y="6.93" fill="rgb(31, 207, 87)">r</tspan>
+		</text>
+	</g>
+		<g transform="translate(-7.94 -3.2) rotate(-3)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-7.25" y="6.93" fill="rgb(31, 207, 87)">u</tspan>
+		</text>
+	</g>
+		<g transform="translate(-3.25 -3.41) rotate(-1)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-6" y="6.93" fill="rgb(31, 207, 87)">c</tspan>
+		</text>
+	</g>
+		<g transform="translate(0.77 -3.42) rotate(1)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-4.09" y="6.93" fill="rgb(31, 207, 87)">t</tspan>
+		</text>
+	</g>
+		<g transform="translate(6.13 -3.23) rotate(3)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-3.53" y="6.93" fill="rgb(31, 207, 87)">i</tspan>
+		</text>
+	</g>
+		<g transform="translate(15.1 -2.76) rotate(5)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-6.58" y="6.93" fill="rgb(31, 207, 87)">o</tspan>
+		</text>
+	</g>
+		<g transform="translate(21.77 -2.2) rotate(7)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-7.34" y="6.93" fill="rgb(31, 207, 87)">n</tspan>
+		</text>
+	</g>
+		<g transform="translate(22.71 -1.38) rotate(9)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-2.4" y="6.93" fill="rgb(31, 207, 87)"> </tspan>
+		</text>
+	</g>
+		<g transform="translate(29.73 -0.38) rotate(11)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-3.57" y="6.93" fill="rgb(31, 207, 87)">l</tspan>
+		</text>
+	</g>
+		<g transform="translate(35.54 0.85) rotate(13)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-3.57" y="6.93" fill="rgb(31, 207, 87)">l</tspan>
+		</text>
+	</g>
+		<g transform="translate(43.72 2.29) rotate(15)">
+		<text font-family="Arvo" font-size="22" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(31,207,87); fill-rule: nonzero; opacity: 1;">
+			<tspan x="-6" y="6.93" fill="rgb(31, 207, 87)">c</tspan>
+		</text>
+	</g>
+</g>
+</svg>

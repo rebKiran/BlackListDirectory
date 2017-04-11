@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-         wp_cache_flush();
-	/*WC()->cart->empty_cart( true );*/
+wp_cache_flush();
+
 
 	/**
 	 * Template Name: Add Business
@@ -45,12 +45,14 @@ session_start();
 	$business_name = "";
 	$web_address = "";
 	$category = "";
-	$business_phone_number = "";
+	/*$business_phone_number = ""; */
 	$business_purpose = "";
 	$mob_business_city = "";
 	$mob_business_state = "";
 	$mob_business_country = "";
 	$mob_business_contact = "";
+	$mob_business_zipcode = "";
+	
 
        
 	$arrBusinessDetails = array();
@@ -75,13 +77,14 @@ session_start();
 		$business_name = $res_about_us['business_name'];
 		$web_address = $res_about_us['web_address'];
 		$category = $res_about_us['category'];
-		$business_phone_number = $res_about_us['business_phone_number'];
+		$subcategory = $res_about_us['subcategory'];
+		/*$business_phone_number = $res_about_us['business_phone_number'];*/
 		$business_purpose = $res_about_us['business_purpose'];
 		$mob_business_city = $res_about_us['mob_business_city'];
 		$mob_business_state = $res_about_us['mob_business_state'];
 		$mob_business_country = $res_about_us['mob_business_country'];
 		$mob_business_contact = $res_about_us['mob_business_contact'];
-		
+		$mob_business_zipcode = $res_about_us['mob_business_zipcode'];
 		$qry_business = "SELECT ba.*
 			FROM {$wpdb->prefix}business_addresses As ba
 			WHERE ba.questionnaire_id ='". $res_about_us['id']."'";
@@ -130,35 +133,49 @@ session_start();
 			$business_name = trim($_POST['business_name']);
 		}
 
-		if(trim($_POST['phone_number']) === '') {
+		/*if(trim($_POST['phone_number']) === '') {
 			$lastnameError = esc_html__( 'Please enter a Phone Number.', 'classify' );
 			$hasError = true;
 		} else {
 			$phone_number = trim($_POST['phone_number']);
-		}
+		}*/
 		
 		$web_address = trim($_POST['web_address']);
 		$business_purpose = trim($_POST['business_purpose']);
 		$category_name = $_POST['category_name'];
-		
+		if(isset($_POST['sub_category_name'])) {
+			$subcategory = $_POST['sub_category_name'];
+		} else {
+			$subcategory = 0;
+		}	
 		$owner    = trim($_POST['owner']);
 		$business_role = trim($_POST['business_role']);
 		$phone    = $_POST['contact']; //numeric value use: %d
 		$state    = trim($_POST['state']); //string value use: %s
-			$country = trim($_POST['country']); //string value use: %s
-			$zipcode = trim($_POST['zipcode']); //string value use: %s
+		$country = trim($_POST['country']); //string value use: %s
+		$zipcode = trim($_POST['zipcode']); //string value use: %s
 		$city   = $_POST['city']; //string value use: %s
 		
 		$street_address   = $_POST['street_address']; //string value use: %s
 		$address   = trim($_POST['address']); //string value use: %s
 		$contact   = $_POST['contact']; //string value use: %s
 		
+		$hidden_business = $_POST['hid_business'];
 		
-		$mobile_city = trim( $_POST['mobile_city'] );
+		
+		if( 1 == $hidden_business ) {
+			$mobile_city = '';
+			$mobile_state = '';
+			$mobile_country = '';
+			$mobile_contact = '';
+			$mobile_zipcode = '';
+		} else {
+			$mobile_city = trim( $_POST['mobile_city'] );
 			$mobile_state = trim( $_POST['mobile_state'] );
 			$mobile_country = trim( $_POST['mobile_country'] );
 			$mobile_contact = $_POST['mobile_contact'];
-
+			$mobile_zipcode = trim($_POST['mobile_zipcode']);
+		}
 		$il_status = 'Outside';
 		if( 'Illinois' == $state ) {
 			$il_status = 'Inside';
@@ -171,9 +188,9 @@ session_start();
 		if( empty( $_SESSION['questionnaire_id'] )) {
 			
 			 $sql = "INSERT INTO `wp_questionnaire` 
-		   (`owner`, `business_role`, `firstname`, `lastname`, `mailing_address`, `street_address`, `address`, `city`, `state`, `country`,`zipcode`, `email`, `contact`, `product_id`, `banner_id`,  `price`,  `image`, `banner_url`,`business_name`, `web_address`, `category` , `business_phone_number`, `business_purpose`, `number`,`mob_business_city`, `mob_business_state`, `mob_business_country`, `mob_business_contact`, `il_status` )
+		   (`owner`, `business_role`, `firstname`, `lastname`, `mailing_address`, `street_address`, `address`, `city`, `state`, `country`,`zipcode`, `email`, `contact`, `product_id`, `banner_id`,  `price`,  `image`, `banner_url`,`business_name`, `web_address`, `category` , `subcategory`, `business_purpose`, `number`,`mob_business_city`, `mob_business_state`, `mob_business_country`, `mob_business_contact`, `mob_business_zipcode`,`il_status` )
 		   values ('$owner','$business_role','$firstname','$lastname', '', '$street_address', '$address',
-				 '$city', '$state', '$country','$zipcode', '$email_address', '$contact', '$product','$banner_id', '$price','$data_uri','$banner_url', '$business_name', '$web_address', '$category_name' ,'$phone_number', '$business_purpose', '$unique_id', '$mobile_city', '$mobile_state', '$mobile_country', '$mobile_contact', '$il_status' )";
+				 '$city', '$state', '$country','$zipcode', '$email_address', '$contact', '$product','$banner_id', '$price','$data_uri','$banner_url', '$business_name', '$web_address', '$category_name' , '$subcategory' , '$business_purpose', '$unique_id', '$mobile_city', '$mobile_state', '$mobile_country', '$mobile_contact', '$mobile_zipcode','$il_status' )";
 
 
 			
@@ -202,11 +219,12 @@ session_start();
 						`business_name` = '$business_name',
 						`web_address` = '$web_address',
 						`category` = '$category_name',
-						`business_phone_number` = '$phone_number',
+						`subcategory` = '$subcategory',
 						`business_purpose` = '$business_purpose',
 						`mob_business_city` = '$mobile_city',
 						`mob_business_state` = '$mobile_state',
 						`mob_business_country` = '$mobile_country',
+						`mob_business_zipcode` = '$mobile_zipcode',
 						`mob_business_contact` = '$mobile_contact',
 						`il_status`	= '$il_status'
 						WHERE 
@@ -257,6 +275,7 @@ session_start();
 						$woocommerce->cart->add_to_cart($addr_product, $cntAddr );
 					}*/
 				}	
+				
 			}
 		} else {
 			
@@ -306,7 +325,7 @@ session_start();
 								$price = 50;
 							   
 							        $business_id = $address[$key];
-								$sql_business = 
+								 $sql_business = 
 									"UPDATE 
 											`wp_business_addresses` 
 									SET 
@@ -315,11 +334,11 @@ session_start();
 										`city` = '$bussn_city',
 										`state` = '$bussn_state',
 										`ziocode` = '$bussn_zip',
-										`country``= '$bussn_country',
+										`country`= '$bussn_country',
 										`contact` = '$bussn_contact',
 										`price` = '$price'
 									WHERE
-										`wp_business_addresses`.`questionnaire_id` = '".$_SESSION['questionnaire_id']."' and `wp_business_addresses`.`id` = $business_id";
+										`wp_business_addresses`.`questionnaire_id` = '".$_SESSION['questionnaire_id']."' and `wp_business_addresses`.`id` = '".$business_id."'";
 									
 								$wpdb->query($sql_business); 
 							} else {
@@ -690,13 +709,14 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 	</div>
 				
 	<div class="Width_Form_Fixed">							
-<input type="text" id="business_contact0" name="business_contact[]" value="" size="60" class="form-text required input-textarea half" placeholder="Contact Number">
+<input type="text" id="business_contact0" name="business_contact[]" value="" size="60" class="form-text required input-textarea half contact_business" placeholder="Contact Number">
 	<div id="business_contact_err_0"></div>
 	</div>
 	<div class="clearfix"></div>
 								
 	<div class="spoouter">
 		<a href="javascript:;" id="add_address">Add Another Address</a>
+		<center><span class="menu-item-text"><p><span class="menu-text">Each Additional Address is $50.</span></p></span></center>
 	</div>
  </div>
 <?php } else {  ?>
@@ -732,19 +752,20 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 			<input type="text" id="business_zipcode<?php echo $keyIndex;?>" name="business_zipcode[]" value="<?php echo $business_details['ziocode']; ?>" class="form-text required input-textarea half" placeholder="zipcode"/>
 </div>
 			 <div class="Width_Form_Fixed">
-	<input type="text" id="business_country" name="business_country[]" value="" class="form-text required input-textarea half" placeholder="Country">
+	<input type="text" id="business_country" name="business_country[]" value="<?php echo $business_details['country']; ?>" class="form-text required input-textarea half" placeholder="Country">
 	</div>
 			
 			
 			
 			 <div class="Width_Form_Fixed">
-			<input type="text" id="business_contact<?php echo $keyIndex;?>" name="business_contact[]" value="<?php echo $business_details['contact']; ?>" size="60" class="form-text required input-textarea half" placeholder="Contact Number"/>
+			<input type="text" id="business_contact<?php echo $keyIndex;?>" name="business_contact[]" value="<?php echo $business_details['contact']; ?>" size="60" class="form-text required input-textarea half contact_business" placeholder="Contact Number"/>
 			<div id="business_contact_err_<?php echo $keyIndex;?>"></div>
 		</div>
 		<div class="clearfix"></div>
 		<?php if(0 == $keyIndex ) { ?>
 			<div class="spoouter">
 				<a href="javascript:;" id="add_address">Add Another Address</a>
+				<center><span class="menu-item-text"><p><span class="menu-text">Each Additional Address is $50.</span></p></span></center>
 			</div>
 		<?php } else {
 			$p = $keyIndex + 1;
@@ -763,6 +784,8 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 <a href="javascript:;" id="insert_addr">Add business address</a></div>
 
 	<!-- Mobile business -->
+	
+	<div id="mobile_buinsess_div" style="<?php if( !empty($_SESSION['questionnaire_id']) && 0 == $total){ ?> display:block <?php } else { ?> display:none <?php } ?>">
 	<label class="gfield_label gfield_label_before_complex" for="input_1_30_3">Mobile Business<span class="gfield_required">*</span></label>
 								
 	 <div class="Width_Form_Fixed">
@@ -781,7 +804,7 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 								</div>
 	<div class="clearfix"></div>
 	 <div class="Width_Form_Fixed">
-	<input type="text" id="mobile_zipcode" name="mobile_zipcode[]" value="<?php echo $mob_business_country;?>" class="form-text required input-textarea half" placeholder="Zipcode">
+	<input type="text" id="mobile_zipcode" name="mobile_zipcode" value="<?php echo $mob_business_zipcode;?>" class="form-text required input-textarea half" placeholder="Zipcode">
 	<div id="mobile_zipcode_err"></div>
 	</div>
 	 <div class="Width_Form_Fixed">
@@ -794,17 +817,18 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 	<input  type="text" id="mobile_contact" name="mobile_contact" value="<?php echo $mob_business_contact; ?>" size="60" class="form-text required input-textarea half" placeholder="Contact Number">
 	<div id="mobile_contact_err"></div>
 	</div>
+	</div>
+	
 	<div class="clearfix"></div>
-
-
+	
 	
 			
-		 <div class="Width_Form_Fixed">		
+		 <!--<div class="Width_Form_Fixed">		
 <label class="gfield_label gfield_label_before_complex" for="input_1_30_3">Phone Number<span class="gfield_required">*</span></label>
 				
 								<input type="text" id="phone_number" name="phone_number" value="<?php echo $business_phone_number; ?>" size="60" class="form-text required input-textarea half" placeholder="Phone Number" maxlength="15"><div class="clearfix"></div>
 	<div id="phone-no-err"></div>
-</div>
+</div> -->
 
 							
 								 <div class="Width_Form_Fixed">
@@ -831,18 +855,9 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 														?>
 															<option value="<?php echo $catID; ?>" <?php if( $catID == $category ){?> selected="selected" <?php } ?> ><?php echo $cat->cat_name; ?></option>
 																				
-													<?php 
-														$args2 = array(
-															'hide_empty' => '0',
-															'parent' => $catID
-														);
-														$categories = get_categories($args2);
-														foreach ($categories as $cat) { ?>
-															<option value="<?php echo  $cat->cat_ID; ?>" <?php if( $cat->cat_ID == $category ){?> selected="selected"  <?php } ?> ><?php echo $cat->cat_name; ?></option>
-													<?php } ?>
+													
 
-													<?php } else { ?>
-													<?php }
+													<?php } 
 												} ?>
 
 											</select>
@@ -852,7 +867,48 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 							</div>
                                                    <div id="cat-err"></div>
                                                </div>
+											   <?php if( empty($_SESSION['questionnaire_id']) ) { ?>
+											   	 <div class="Width_Form_Fixed" id="sub_cat_id" style="display:none;">
+
+
+                                               </div>
+											   <?php } else { 
+					
+				$categories = get_categories(array('child_of' => $category));
+?> <div class="Width_Form_Fixed" id="sub_cat_id">
+   <label class="gfield_label gfield_label_before_complex" for="input_1_30_3">Subcategory</label>			
+								<div id="edit-field-category-wrapper" class="views-exposed-widget views-widget-filter-field_category">
+								<div class="views-widget">
+									<div class="control-group form-type-select form-item-field-category form-item">
+										<div class="controls">
+										 <?php if(!empty($subcategory)){ ?>
+											<select id="subcategory" name="sub_category_name" class="form-select">
+														
+												<option value=""></option>
+												<?php
 												
+													foreach ($categories as $cat) {
+														
+															$catID = $cat->cat_ID;
+														?>
+															<option value="<?php echo $catID; ?>" <?php if( $catID == $subcategory ){?> selected="selected" <?php } ?> ><?php echo $cat->cat_name; ?></option>
+																				
+													
+
+													<?php
+												} ?>
+
+											</select>
+										 <?php } else { ?>
+													<div class="Width_Form_Fixed">No Sub Category Found</div>
+											<?php } ?>
+										</div>
+									</div>
+								</div>
+							</div>
+</div>	
+											   <?php  } ?>
+											
 							<br clear="all">
 
 							<fieldset class="input-title">
@@ -1089,14 +1145,14 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 		});
 
 
-	});
+	});	jQuery( document ).ready(function( $ ) {		jQuery(".contact_business").mask("(999) 999-9999");	});	
 	jQuery.noConflict();
 	jQuery( document ).ready(function(  ) {
 		jQuery.mask.definitions['~'] = "[+-]";
 		jQuery("#contact").mask("(999) 999-9999");
 		jQuery("#phone_number").mask("(999) 999-9999");
 			jQuery("#mobile_contact").mask("(999) 999-9999");
-			jQuery("input[name='business_contact[]'").mask("(999) 999-9999");
+			
 		
 	});
 
@@ -1105,38 +1161,44 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 		var business_name = document.getElementById('business_name').value;
 			 business_name = business_name.trim();
 
-		 var phone_number  = document.getElementById('phone_number').value; 
-			 phone_number = phone_number.trim();
-
-		 var mobile_city  = document.getElementById('mobile_city').value; 
-			 mobile_city = mobile_city.trim();
-		  
-		 var mobile_state  = document.getElementById('mobile_state').value; 
-			 mobile_state = mobile_state.trim();
-			 
-		 var mobile_zipcode  = document.getElementById('mobile_zipcode').value; 
-			 mobile_zipcode = mobile_zipcode.trim();
-			 
-		 var mobile_country  = document.getElementById('mobile_country').value; 
-			 mobile_country = mobile_country.trim();
-			 
-		 var mobile_contact= document.getElementById('mobile_contact').value; 
-			 mobile_contact= mobile_contact.trim();
-
+		/* var phone_number  = document.getElementById('phone_number').value; 
+			 phone_number = phone_number.trim();*/
+			
+		 var mobile_div_style = jQuery("#mobile_buinsess_div").css('display');
+	     
+		 if( 'block' == mobile_div_style ) {		 
+			 var mobile_city  = document.getElementById('mobile_city').value; 
+				 mobile_city = mobile_city.trim();
+			  
+			 var mobile_state  = document.getElementById('mobile_state').value; 
+				 mobile_state = mobile_state.trim();
+				 
+			 var mobile_zipcode  = document.getElementById('mobile_zipcode').value; 
+				 mobile_zipcode = mobile_zipcode.trim();
+				 
+			 var mobile_country  = document.getElementById('mobile_country').value; 
+				 mobile_country = mobile_country.trim();
+				 
+			 var mobile_contact= document.getElementById('mobile_contact').value; 
+				 mobile_contact= mobile_contact.trim();
+		 }
+		 
 		 var category  = document.getElementById('category').value; 
 		 var allContacts = document.getElementsByName("business_contact[]");
 
 		 var business =  jQuery("#business_div").css("display");
 
 		 document.getElementById('business-err').innerHTML = "";
-		 document.getElementById('phone-no-err').innerHTML = "";
+		/* document.getElementById('phone-no-err').innerHTML = "";*/
 		 document.getElementById('cat-err').innerHTML = "";
+
+		 if( 'block' == mobile_div_style ) {	
 			 document.getElementById('mobile_city_err').innerHTML = "";
 			 document.getElementById('mobile_state_err').innerHTML = "";
 			 document.getElementById('mobile_zipcode_err').innerHTML = "";
 			 document.getElementById('mobile_country_err').innerHTML = "";
 			 document.getElementById('mobile_contact_err').innerHTML = "";
-		 
+		 }
 		 var valid = true;
 
 		 if( '' == business_name ) { 
@@ -1177,45 +1239,45 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 	   } else {
 		   document.getElementById('hid_business').value = 0;
 	   }
-	   if( '' == mobile_city) { 
-			document.getElementById('mobile_city_err').innerHTML = "<span style='color:red;margin-left:10px;'>City is required.</span>" ;
-				document.getElementById('mobile_city').focus();
-				valid = false;
-				return false;
-		 } 
-		 if( '' == mobile_state) { 
-			document.getElementById('mobile_state_err').innerHTML = "<span style='color:red;margin-left:10px;'>State is required.</span>" ;
-				document.getElementById('mobile_state').focus();
-				valid = false;
-				return false;
-		 } 
+	   if( 'block' == mobile_div_style ) {
+		   if( '' == mobile_city) { 
+				document.getElementById('mobile_city_err').innerHTML = "<span style='color:red;margin-left:10px;'>City is required.</span>" ;
+					document.getElementById('mobile_city').focus();
+					valid = false;
+					return false;
+			} 
+			if( '' == mobile_state) { 
+				document.getElementById('mobile_state_err').innerHTML = "<span style='color:red;margin-left:10px;'>State is required.</span>" ;
+					document.getElementById('mobile_state').focus();
+					valid = false;
+					return false;
+			} 
 		 
-		if( '' == mobile_zipcode) { 
-			document.getElementById('mobile_zipcode_err').innerHTML = "<span style='color:red;margin-left:10px;'>Zipcode is required.</span>" ;
-				document.getElementById('mobile_zipcode').focus();
-				valid = false;
-				return false;
-		} 
-		if( '' == mobile_country) { 
-			document.getElementById('mobile_country_err').innerHTML = "<span style='color:red;margin-left:10px;'>Country is required.</span>" ;
-				document.getElementById('mobile_country').focus();
-				valid = false;
-				return false;
-		} 
-	   if( '' == mobile_contact) { 
-			document.getElementById('mobile_contact_err').innerHTML = "<span style='color:red;margin-left:10px;'>Contact number is required.</span>" ;
+			if( '' == mobile_zipcode) { 
+				document.getElementById('mobile_zipcode_err').innerHTML = "<span style='color:red;margin-left:10px;'>Zipcode is required.</span>" ;
+					document.getElementById('mobile_zipcode').focus();
+					valid = false;
+					return false;
+			} 
+			if( '' == mobile_country) { 
+				document.getElementById('mobile_country_err').innerHTML = "<span style='color:red;margin-left:10px;'>Country is required.</span>" ;
+					document.getElementById('mobile_country').focus();
+					valid = false;
+					return false;
+			} 
+			if( '' == mobile_contact) { 
+				document.getElementById('mobile_contact_err').innerHTML = "<span style='color:red;margin-left:10px;'>Contact number is required.</span>" ;
 				document.getElementById('mobile_contact').focus();
 				valid = false;
 				return false;
-		 } 
-		 if( '' == phone_number ) { 
-			document.getElementById('phone-no-err').innerHTML = "<span style='color:red;margin-left:10px;'>Phone number is required.</span>" ;
-			document.getElementById('phone_number').focus();
-			valid = false;
-			return false;
-		 }
-		 
-			
+			} 
+				if( '' == phone_number ) { 
+				document.getElementById('phone-no-err').innerHTML = "<span style='color:red;margin-left:10px;'>Phone number is required.</span>" ;
+				document.getElementById('phone_number').focus();
+				valid = false;
+				return false;
+			 }
+	    }			
 
 		 if( '' == category ) { 
 			document.getElementById('cat-err').innerHTML = "<span style='color:red;margin-left:10px;'>Business type is required.</span>" ;
@@ -1229,7 +1291,7 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 			 if( false == valid ) {
 			return false;
 		 } 
-
+                 
 	}
 
 	jQuery( document ).ready(function( $ ) {
@@ -1250,7 +1312,7 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 			if(x < max_fields){ //max input box allowed
 				x++; //text box increment
 				var p = x - 2;
-				$(wrapper).append('<div><div><label class="gfield_label gfield_label_before_complex" for="input_1_30_3">Business Address</label></div><div><input type="text" id="street_add'+y+'" name="street_add[]" value="" class="form-text required input-textarea full" placeholder="Street Address"></div><input type="text" id="bussiness_addr'+y+'" name="bussiness_addr[]" value="" class="form-text required input-textarea full" placeholder="Address Line 2"><div class="clearfix"></div><div class="Width_Form_Fixed"><input type="text" id="business_city'+y+'" name="business_city[]" value="" class="form-text required input-textarea half" placeholder="City"></div><div><div class="Width_Form_Fixed"><select id="business_state'+y+'" name="business_state[]" class="form-select"><option value="">Select State</option><?php foreach ($states['US'] as $key => $val) { ?><option value="<?php echo $key; ?>"><?php echo $val; ?></option><?php } ?></select></div></div><div class="clearfix"></div><div class="Width_Form_Fixed"><input type="text" id="business_zipcode'+y+'" name="business_zipcode[]" value="" class="form-text required input-textarea half" placeholder="zipcode"></div><div class="Width_Form_Fixed"><input type="text" style="margin-left:5px" id="business_country'+y+'" name="business_country[]" value="" class="form-text required input-textarea half" placeholder="Country"></div><div class="Width_Form_Fixed"><input type="text" id="business_contact'+y+'" name="business_contact[]" value="" size="60" class="form-text required input-textarea half" placeholder="Phone Number"><div id="business_contact_err_'+y+'"></div></div><div class="clearfix"></div><a href="javascript:;" class="remove_field" id="rem_addr'+y+'">Remove Address</a></div>'); //add input box
+				$(wrapper).append('<div><div><label class="gfield_label gfield_label_before_complex" for="input_1_30_3">Business Address</label></div><div><input type="text" id="street_add'+y+'" name="street_add[]" value="" class="form-text required input-textarea full" placeholder="Street Address"></div><input type="text" id="bussiness_addr'+y+'" name="bussiness_addr[]" value="" class="form-text required input-textarea full" placeholder="Address Line 2"><div class="clearfix"></div><div class="Width_Form_Fixed"><input type="text" id="business_city'+y+'" name="business_city[]" value="" class="form-text required input-textarea half" placeholder="City"></div><div><div class="Width_Form_Fixed"><select id="business_state'+y+'" name="business_state[]" class="form-select"><option value="">Select State</option><?php foreach ($states['US'] as $key => $val) { ?><option value="<?php echo $key; ?>"><?php echo $val; ?></option><?php } ?></select></div></div><div class="clearfix"></div><div class="Width_Form_Fixed"><input type="text" id="business_zipcode'+y+'" name="business_zipcode[]" value="" class="form-text required input-textarea half" placeholder="zipcode"></div><div class="Width_Form_Fixed"><input type="text" style="margin-left:5px" id="business_country'+y+'" name="business_country[]" value="" class="form-text required input-textarea half" placeholder="Country"></div><div class="Width_Form_Fixed"><input type="text" id="business_contact'+y+'" name="business_contact[]" value="" size="60" class="form-text required input-textarea half contact_business" placeholder="Phone Number"><div id="business_contact_err_'+y+'"></div></div><div class="clearfix"></div><a href="javascript:;" class="remove_field" id="rem_addr'+y+'">Remove Address</a></div>'); //add input box
 
 				if($('#rem_addr'+p).length > 0) {
 					$('#rem_addr'+p).hide();
@@ -1260,7 +1322,7 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 			} else {
 				alert( 'You can add maxiumum 3 business addresses.' );
 			}
-			jQuery("input[name='business_contact[]'").mask("(999) 999-9999");
+			jQuery(".contact_business").mask("(999) 999-9999");
 		});
 		$(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 			
@@ -1272,7 +1334,7 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 				$('#rem_addr'+p).show();
 			}
 			
-			e.preventDefault(); $(this).parent('div').remove(); x--;
+			e.preventDefault(); $(this).parent('div').remove(); /* x--; */
 		});
 		 $('.remove_field').on("click", function(e){ //user click on remove text
 		 
@@ -1291,6 +1353,7 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 		 
 			document.getElementById('hid_business').value = '0';
 			//$('#business_section').empty();
+			$('#mobile_buinsess_div').show();
 			$('#primary_addr').hide();
 			$('#business_div').hide();
 			$('#add_bussn_addr').show();
@@ -1299,6 +1362,7 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 		 
 		 $('#insert_addr').click(function(e){ //on add input button click
                          document.getElementById('hid_business').value = 1;
+						 $('#mobile_buinsess_div').hide();
 			 $('#add_bussn_addr').hide();
 			 $('#primary_addr').show();
 			 if($('#edit_addr').length > 0 ) {
@@ -1311,6 +1375,22 @@ if( empty($_SESSION['questionnaire_id']) ||  0 == $total  ) { ?>
 			 $('#primary_addr').show();
 			 $('#business_div').show();
 		 });
+		 
+		 $('#category').change(function(e) {
+			$("#sub_cat_id").hide();
+			 var category = $(this).val();
+			 $.ajax({
+				type: "POST",
+				url: "http://blacklistdir.rebelute.in/wp-admin/admin-ajax.php",
+				data: "action=get_subcategory&category_id="+category,
+				success: function( obj ){
+					$("#sub_cat_id").show();
+					$("#sub_cat_id").html(obj);
+				}	
+				    
+			});
+				
+		 });	 
 
 	});	
 	</script>
@@ -1479,6 +1559,9 @@ float:left;
 
 	   display:none;
 	}
+	#subcategory_chosen {
+		display:none;
+	}
 	#state {
 	 display:block !important;
 	}
@@ -1499,6 +1582,9 @@ float:left;
 	   display:none;
 	}
 	#category {
+	   display:block !important; 
+	}
+	#subcategory {
 	   display:block !important; 
 	}
        .textwidget #contact-form #contactName {

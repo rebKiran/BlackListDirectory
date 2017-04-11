@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="270" height="270" viewBox="0 0 270 270" xml:space="preserve">
+<desc>Created with Fabric.js 1.6.7</desc>
+<defs></defs>
+	<g transform="translate(135 135)">
+		<text font-family="Shadows Into Light" font-size="18" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(21,155,173); fill-rule: nonzero; opacity: 1;" >
+			<tspan x="-6.6" y="5.67" fill="rgb(21, 155, 173)">aa</tspan>
+		</text>
+	</g>
+<polygon points="40,90 54,68 79,68 66,45 79,23 53,23 40,0 26,23 0,23 14,45 0,68 26,68 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(79,113,185); fill-rule: nonzero; opacity: 1;" transform="translate(73.46 207.46) translate(-39.5, -45)  "/>
+</svg>

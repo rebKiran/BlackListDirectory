@@ -13,7 +13,6 @@ print_r(WC()->cart);*/
  */
 
 get_header(); ?>
-
 <?php 	
 $total = 0;
 $additional_total = 0;
@@ -35,8 +34,8 @@ $querystr = "
 $banner_sizes = $wpdb->get_results($querystr,ARRAY_A);
 
 	
-$wp_session = WP_Session::get_instance();
-$data = json_decode($wp_session->json_out() ); 
+/*$wp_session = WP_Session::get_instance();
+$data = json_decode($wp_session->json_out() ); */
 
 $query = "SELECT q.business_name,q.web_address,q.id
 			FROM {$wpdb->prefix}questionnaire As q
@@ -76,7 +75,7 @@ foreach( $res_list as $key => $listing_options ){
                $listing += get_post_meta( $listing_options['product_id'], '_sale_price', true );
 	}
 }						
-					
+					print_r();
 if(!empty($results)){
 	
 	$qry_business = "SELECT ba.*
@@ -130,9 +129,31 @@ if( 'Back' == $_POST['back_btn'] ) {
 								<div class="wpb_wrapper  append-text">
 									<form class="form-item" action="" id="primaryPostForm" method="POST" enctype="multipart/form-data" >
 										
-											<div id="chicago_business" class="author-info clearfix">
+											<div id="chicago_business" class="author-info clearfix" style="<?php if('Yes' == trim($res_list[0]['border'])) { ?>border: 1px solid #e1e1e1; <?php } else { ?> border: transparent;<?php } ?>">
 												<fieldset class="input-title">
-													<label for="edit-field-category-und" class="gfield_label gfield_label_before_complex" for="input_1_30_3">Business Name :- <?php echo ucfirst($results[0]['business_name']);?></label>
+													<label for="edit-field-category-und" class="gfield_label gfield_label_before_complex" for="input_1_30_3">Business Name :- <?php 
+													
+													
+													if('Yes' == trim($res_list[0]['name_in_caps']) && 'No' == trim($res_list[0]['bold_print']) ) {
+														
+														echo strtoupper($results[0]['business_name']);
+														
+													} 
+													if('Yes' == trim($res_list[0]['bold_print']) && 'No' == trim($res_list[0]['name_in_caps']) ) {
+														
+														echo '<b>' . $results[0]['business_name'] . '</b>';
+														
+													} 
+													if('Yes' == trim($res_list[0]['name_in_caps']) && 'Yes' == 			   trim($res_list[0]['bold_print'])) { 
+														echo '<b>' . strtoupper($results[0]['business_name']) . '</b>';
+														
+													}  
+													if('No' == trim($res_list[0]['name_in_caps']) && 'No' == trim($res_list[0]['bold_print'])) { 
+														echo $results[0]['business_name'];
+													}	
+																										
+													
+													?></label>
 																	
 													<label for="edit-field-category-und" class="gfield_label gfield_label_before_complex" for="input_1_30_3">Web Address :- <?php echo $results[0]['web_address'];?></label>
 												</fieldset>	
@@ -153,10 +174,13 @@ if( 'Back' == $_POST['back_btn'] ) {
 												
 											</div>
 <div style="text-align:center" class="your-total-style"><center>
+
 											<h4>Total Business address : $<?php echo $business_address; ?> </h4>
 											<h4>Banner price : $<?php echo $listing; ?> </h4>
 											<h4>Total additional directory option : $<?php echo $additional_total; ?> </h4>
 											<h4>Directory Total: $<?php echo $total; ?> </h4>
+											
+											<h5> <strong> NOTE: </strong> <u>ALL</u> LISTINGS ARE POSTED FOR 3 MONTH INTERVALS FOR THE DIRECTORY & WEBSITE </h5>
 		</center> 		</div>						 <div style="text-align:center;" class="form-submit-global">
 									              <div class="center-div publish-ad-button" id="chicago_button">
 											<input  type="submit" class="" id="back-submit" name="back_btn" value="Back" />
@@ -363,5 +387,6 @@ Success!
 	margin:10px;
 	padding-bottom: 8px;display:inline-block
 }									
+	
 </style>
 <?php get_footer(); ?>

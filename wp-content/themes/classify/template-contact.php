@@ -261,7 +261,12 @@ get_header(); ?>
 														
 							<br />
 														
-							<input style="margin-bottom: 0;" name="submitted" type="submit" value="<?php esc_html_e( 'Send Message', 'classify' ); ?>" class="input-submit"/>			
+							<div class="span2 pull-left">
+<input class="input-submit" style="margin-bottom: 0px;" name="submitted" value="Send Message" type="submit">
+</div>
+<div class="span2 pull-left">
+<input class="apend_active input-submit" style="margin-bottom: 0px;" name="reset" value="R E S E T" type="button" onclick="location.href = 'http://blacklistdir.rebelute.in/contact/';">
+</div>		
 								
 							</div>
 													
@@ -322,7 +327,12 @@ get_header(); ?>
 														
 							<br />
 														
-							<input style="margin-bottom: 0;" name="submitted" type="submit" value="<?php esc_html_e( 'Send Message', 'classify' ); ?>" class="input-submit"/>			
+							<div class="span2 pull-left">
+<input class="input-submit" style="margin-bottom: 0px;" name="submitted" value="Send Message" type="submit">
+</div>
+<div class="span2 pull-left">
+<input class="apend_active input-submit" style="margin-bottom: 0px;" name="reset" value="R E S E T" type="button" onclick=" location.href = 'http://blacklistdir.rebelute.in/contact/';">
+</div>		
 								
 							</div>
 													

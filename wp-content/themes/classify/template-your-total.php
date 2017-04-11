@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 /**
  * Template Name: Business Total
  *
@@ -9,11 +10,29 @@ session_start();
  * @since Twenty Fourteen 1.0
  */
 $woocommerce->session->set_customer_session_cookie(true);
+
 get_header(); ?>
 
 <?php 	
 
+$cart_data = WC()->session->get_session_data();
+$session_cart_data = unserialize( $cart_data['cart']);
 
+//$session_cart_data = unserialize( WC()->session->get_session_data()['removed_cart_contents']);
+
+/*echo '<pre/>';*/
+//print_r(WC()->get_cart_from_session());
+
+// Trigger action
+     /* do_action( 'woocommerce_cart_loaded_from_session', $this );
+
+      if ( $update_cart_session ) {
+        WC()->session->cart = $this->get_cart_for_session();
+		print_r(WC()->session->cart);
+      }
+
+echo '<pre/>';*/
+/*print_r( $woocommerce->cart->get_cart());*/
 $directory_total = 0;
 $listing_total = 0;
 $address_total = 0;	
@@ -28,7 +47,6 @@ $results = $wpdb->get_results($query,  ARRAY_A );
 
 $mylisting = $wpdb->get_row( "SELECT * FROM wp_website_listing WHERE questionnaire_id = '".$_SESSION['questionnaire_id']."' ", ARRAY_A );	
 
-
 $package = $wpdb->get_row( "SELECT * FROM wp_questionnaire WHERE id = '".$_SESSION['questionnaire_id']."' ", ARRAY_A );	
 
 				
@@ -40,12 +58,14 @@ if(!empty($mylisting)){
 						
 	$arrBusinessDetails = $wpdb->get_results($qry_business,  ARRAY_A );
 }
-	
+
 if( !empty( $arrBusinessDetails ) ) {	
     foreach( $arrBusinessDetails as $key => $business_details ){  
 	
          if( 'Inside' == $package['il_status'] ) {
 	      $directory_total += $business_details['price'];
+		  
+
          } else {
              $address_total += $business_details['price'];
          }
@@ -59,7 +79,6 @@ $qry_dir_listing = "SELECT dl.name_in_caps, dl.bold_print, dl.border, dl.product
 						
 $res_list = $wpdb->get_results($qry_dir_listing,  ARRAY_A );
 
-
    foreach( $res_list as $key => $listing_options ){  
  
 	if('Yes' == $listing_options['name_in_caps'] ) {
@@ -72,7 +91,25 @@ $res_list = $wpdb->get_results($qry_dir_listing,  ARRAY_A );
 		$directory_total += 20;
 	}
 	if( !empty($listing_options['product_id']) ) {
-		$directory_total += get_post_meta( $listing_options['product_id'], '_sale_price', true );
+		//$directory_total += get_post_meta( $listing_options['product_id'], '_sale_price', true );
+            /*$i = 0;
+            foreach( $session_cart_data as $key => $cart_item ) {
+            
+               if( 0 == $i ) {
+                     $directory_total += $cart_item['line_total'];
+               } 
+   
+                $i++;
+             }*/
+			 
+			 if(isset($_SESSION['banner_price']) && !empty($_SESSION['banner_price']) ) {
+				 $directory_total += $_SESSION['banner_price'];
+			 } else {
+				 if( 2077 == $listing_options['product_id'] || 2082 == $listing_options['product_id']) {
+					$directory_total += get_post_meta( $listing_options['product_id'], '_sale_price', true );
+				 }	
+			 }
+                 
 	}
    }
 }
@@ -107,64 +144,93 @@ global $wpdb, $woocommerce;
 $valid = 'true';			
 if( 'Next' == $_POST['next_btn'] ) { 
      
-     WC()->cart->empty_cart();
+    //WC()->cart->empty_cart();
+    $arrProductId = array();
     
-     if( !empty( $arrBusinessDetails ) ) {	
-         foreach( $arrBusinessDetails as $key => $business_details ){  
-             
-            $woocommerce->cart->add_to_cart($business_details['product_id'], 1 );
-             
-         }
-     }
-
-     if( 'Inside' == $package['il_status'] ) {
-          foreach( $res_list as $key => $listing_options ){  
- 
-	      if('Yes' == $listing_options['name_in_caps'] ) {
-		  $woocommerce->cart->add_to_cart( 2087, 1 );
-	      }
-
-	      if('Yes' == $listing_options['bold_print'] ) {
-		 $woocommerce->cart->add_to_cart( 2084, 1 );
-	      }
-
-	      if('Yes' == $listing_options['border'] ) {
-		  $woocommerce->cart->add_to_cart( 2650, 1 );
-	      }
-
-	      if( !empty($listing_options['product_id']) ) {
-		  $woocommerce->cart->add_to_cart( $listing_options['product_id'], 1 );
-	      }
-          }
-
-     }
-
-     if(!empty($mylisting)) {
-	if('Yes' == $mylisting['name_in_caps']) {
-		 $woocommerce->cart->add_to_cart( 2087, 1 );
-	}
-	if('Yes' == $mylisting['bold_print']) {
-		$woocommerce->cart->add_to_cart( 2084, 1 );
-	}
-	if('Yes' == $mylisting['upload_logo']) {
-		$woocommerce->cart->add_to_cart( 2653, 1 );
-	}
-	if('Yes' == $mylisting['deal']) {
-		$woocommerce->cart->add_to_cart( 2651, 1 );
-	}
-        if('Outside' == $package['il_status'] && !empty($mylisting['product_id'])) {
-              if( 2077 ==  $mylisting['product_id'] ) {
-		   $woocommerce->cart->add_to_cart( $mylisting['product_id'], 1 );
-              } 
-              if( 2082 ==  $mylisting['product_id'] ) {
-		   $woocommerce->cart->add_to_cart( $mylisting['product_id'], 1 );
-              }
-	}
+    foreach( WC()->cart->get_cart() as $key => $cart_item ) {
+	$arrProductId[] = $cart_item['product_id'];
+     
     }
 
+    if( !empty( $arrBusinessDetails ) ) {	
+		foreach( $arrBusinessDetails as $key => $business_details ){  
+			
+			if( !in_array( $business_details['product_id'], $arrProductId ) ) { 
+				$woocommerce->cart->add_to_cart( $business_details['product_id'], 1 );
+			}	
+			 
+        }
+    }       
+ 
+    if( 'Inside' == $package['il_status'] ) {
+		foreach( $res_list as $key => $listing_options ){  
+ 
+			if('Yes' == $listing_options['name_in_caps'] ) {
+				 if( !in_array( 2087, $arrProductId ) ) {
+					  $woocommerce->cart->add_to_cart( 2087, 1 );
+				 }	
+			}
 
-	 /* $url = "http://blacklistdir.rebelute.in/thank-you-for-your-submisson/"; */
-         $url = "http://blacklistdir.rebelute.in/checkout/";
+			if('Yes' == $listing_options['bold_print'] ) {
+				if( !in_array( 2084, $arrProductId ) ) {
+					$woocommerce->cart->add_to_cart( 2084, 1 );
+				}	
+			}
+
+			if('Yes' == $listing_options['border'] ) {
+				if( !in_array( 2650, $arrProductId ) ) {
+				  $woocommerce->cart->add_to_cart( 2650, 1 );
+				}	
+			}
+			
+			if(!isset($_SESSION['banner_price']) && empty($_SESSION['banner_price']) ) {
+				if( !in_array( 2077, $arrProductId ) ) {
+					$woocommerce->cart->add_to_cart( $listing_options['product_id'], 1 );
+				}	
+			}	 
+		   /*if( !empty($listing_options['product_id']) ) {
+				$woocommerce->cart->add_to_cart( $listing_options['product_id'], 1 );
+			}*/
+        }
+
+    }
+
+    if(!empty($mylisting)) {
+		
+        if('Yes' == $mylisting['name_in_caps']) {
+			if( !in_array( 2087, $arrProductId ) ) {
+				$woocommerce->cart->add_to_cart( 2087, 1 );
+			}	
+		}
+		if('Yes' == $mylisting['bold_print']) {
+			 if( !in_array( 2084, $arrProductId ) ) {
+				$woocommerce->cart->add_to_cart( 2084, 1 );
+			 }	
+		}
+		if('Yes' == $mylisting['upload_logo']) {
+			if( !in_array( 2653, $arrProductId ) ) {
+			   $woocommerce->cart->add_to_cart( 2653, 1 );
+			}	
+		}
+		if('Yes' == $mylisting['deal']) {
+			if( !in_array( 2651,  $arrProductId ) ) {	
+			   $woocommerce->cart->add_to_cart( 2651, 1 );
+			}	
+		}
+		if('Outside' == $package['il_status'] && !empty($mylisting['product_id'])) {
+			if( 2077 ==  $mylisting['product_id'] ) {
+				if( !in_array( 2077,  $arrProductId ) ) {
+					$woocommerce->cart->add_to_cart( $mylisting['product_id'], 1 );
+				}	
+			} 
+			if( 2082 ==  $mylisting['product_id'] ) {
+				if( !in_array( 2082,  $arrProductId ) ) {
+					$woocommerce->cart->add_to_cart( $mylisting['product_id'], 1 );
+				}	
+			}
+		}
+    }
+    $url = "http://blacklistdir.rebelute.in/checkout/";
 	 ?>
 	   <script type="text/javascript">
                window.location='<?php echo $url;?>';
@@ -179,7 +245,7 @@ if( 'Back' == $_POST['back_btn'] ) {
         </script>
 <?php
 }
-?>	
+?>
 <div class="ad-title">
 	<h2>YOUR TOTAL</h2>
 </div>
@@ -203,8 +269,6 @@ if( 'Back' == $_POST['back_btn'] ) {
 										<form class="form-item" action="" id="primaryPostForm" method="POST" enctype="multipart/form-data" >
 											<!-- <div id="upload-ad" > -->
 											
-										
-														   
 												<div><?php if(!empty($package) && 'Inside' == $package['il_status']) { ?> 
 														<h4>Directory Total :- $<?php echo $directory_total; } ?></h4>
 												</div>

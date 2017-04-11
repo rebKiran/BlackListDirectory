@@ -425,7 +425,7 @@ get_header(); ?>
 
             	<?php
 					$argsmain = array(
-									'hide_empty' => 0,									
+									/*'hide_empty' => 0,									*/
 									 );
 									
 				$categories = get_categories($argsmain);

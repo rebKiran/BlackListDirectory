@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The base configuration for WordPress
  *
@@ -80,6 +81,7 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', false);
 define('WP_CACHE', false);
 define( 'SAVEQUERIES', false);
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
